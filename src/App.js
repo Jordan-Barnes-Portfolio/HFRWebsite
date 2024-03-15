@@ -5,9 +5,12 @@ import Home from "./Pages/Home";
 import Legal from "./Pages/Legal";
 import NotFound from "./Pages/NotFound";
 import Appointment from "./Pages/Appointment";
-import { Analytics } from "@vercel/analytics/react"
+import { inject } from "@vercel/analytics"
 
 function App() {
+
+  inject();
+  
   return (
     <div className="App">
       <Router basename="/">
