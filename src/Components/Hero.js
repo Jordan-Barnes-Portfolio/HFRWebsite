@@ -46,12 +46,12 @@ function Hero() {
             src={heroVideo}
           ></video>
         </div>
-        <div className="text-section">
+        <div className="text-section" >
           <p className="text-headline">Need immediate flood or mold services?</p>
-          <h2 className="text-title">
+          <h2 className="text-title" style={{width: "100%"}}>
             Click "Emergency Service" below or call us and we will come right away!
           </h2>
-          <p className="text-descritpion">
+          <p className="text-descritpion" style={{width: "100%"}}>
             Talk to online Technicians and get advice, expert advice, and assistance from
             one of our techs within minutes. On-demand restoration
             services at your fingertips.

@@ -32,16 +32,16 @@ function BookAppointment() {
         </p>
 
         <p className="ba-checks ba-check-first">
-          <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#d6ad25" }} /> Best Professional Technicians
+          <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#2c6598" }} /> Best Professional Technicians
         </p>
         <p className="ba-checks">
-          <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#d6ad25" }} /> Emergency Services
+          <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#2c6598" }} /> Emergency Services
         </p>
         <p className="ba-checks">
-          <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#d6ad25" }} /> 24/7 Support Live Chat
+          <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#2c6598" }} /> 24/7 Support Live Chat
         </p>
         <p className="ba-checks ba-check-last">
-          <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#d6ad25" }} /> Appointments only a click away
+          <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#2c6598" }} /> Appointments only a click away
         </p>
 
         <button

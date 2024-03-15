@@ -19,7 +19,7 @@
     letter-spacing: .7px;
 }
 .rw-text-num {
-    color: #d6ad25;
+    color: #2c6598;
 }
 .rw-text-desc {
     margin: 16px 0;
@@ -41,7 +41,7 @@
     position: absolute;
     top: -18px;
     left: -24px;
-    color: #d6ad25;
+    color: #2c6598;
     font-family: 'Poppins', sans-serif;
     font-size: 40px;
     font-weight: bold;
@@ -51,7 +51,7 @@
     position: absolute;
     right: -18px;
     bottom: -24px;
-    color: #d6ad25;
+    color: #2c6598;
     font-family: 'Poppins', sans-serif;
     font-size: 40px;
     font-weight: bold;
@@ -98,7 +98,7 @@
     cursor: pointer;
 }
 .rw-next-btn:hover {
-    color: #d6ad25;
+    color: #2c6598;
 }
 /* Responsive */
 @media screen and (max-width: 700px) {

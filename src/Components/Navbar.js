@@ -31,7 +31,7 @@ function Navbar() {
     <div className="navbar-section">
       <h1 className="navbar-title">
         <Link to="/">
-          Heartland Flood Restoration<span className="navbar-sign"><img ></img></span>
+          Heartland Restoration<span className="navbar-sign"><img ></img></span>
         </Link>
       </h1>
 
@@ -60,6 +60,11 @@ function Navbar() {
         <li>
           <a href="#Technicians" className="navbar-links">
             Technicians
+          </a>
+        </li>
+        <li>
+          <a href="/appointment" className="navbar-links">
+            Appointment
           </a>
         </li>
       </ul>

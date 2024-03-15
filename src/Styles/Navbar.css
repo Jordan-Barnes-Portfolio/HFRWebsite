@@ -5,10 +5,11 @@
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    background-color: rgba(255, 255, 255, 0.164);
+    background-color:#ffffff38;
+    width: auto;
 }
 .navbar-title a {
-    color: #d6ad25;
+    color: #2c6598;
     letter-spacing: .6px;
     text-decoration: none;
 }
@@ -39,7 +40,7 @@
     letter-spacing: .8px;
 }
 .navbar-links:hover {
-    color: #0cc2ea;
+    color: #2c6598;
 }
 .navbar-btn {
     margin: 10px;
@@ -48,7 +49,7 @@
     border: 1px solid transparent;
     border-radius: 28px;
     outline: transparent;
-    background-color: #d6ad25;
+    background-color: #2c6598;
     font-size: 18px;
     font-family: 'Rubik', sans-serif;
     letter-spacing: .8px;
@@ -56,9 +57,9 @@
     transition: all .4s ease;
 }
 .navbar-btn:hover {
-    color: #d6ad25;
+    color: #2c6598;
     background-color: white;
-    border: 1px solid #d6ad25;
+    border: 1px solid #2c6598;
 }
 /* Hamburger Icon */
 .mobile-nav {

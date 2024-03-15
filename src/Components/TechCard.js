@@ -11,7 +11,7 @@ function TechCard(props) {
       <p className="dt-card-stars">
         <FontAwesomeIcon
           icon={faStar}
-          style={{ color: "#d6ad25", paddingRight: "6px" }}
+          style={{ color: "#2c6598", paddingRight: "6px" }}
         />
         {props.stars}
         <span className="dt-card-reviews"> ({props.reviews}+ Reviews)</span>
