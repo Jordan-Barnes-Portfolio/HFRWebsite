@@ -67,12 +67,14 @@ function Hero() {
                   </button>
                 </div>
                 <div style={{margin: "5px"}}>
-                  <button
-                    className="text-appointment-btn"
-                    type="button"
-                  >
-                  <FontAwesomeIcon icon={faPhone} /> Call: 913 717 8945
-                  </button>
+                  <a href="tel:9137178945">
+                    <button
+                      className="text-appointment-btn"
+                      type="button"
+                    >
+                      <FontAwesomeIcon icon={faPhone} /> Call: 913 717 8945
+                    </button>
+                  </a>
                 </div>
             </div>
             <div className="text-stats">
