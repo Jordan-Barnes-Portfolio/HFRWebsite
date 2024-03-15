@@ -1,10 +1,11 @@
 .navbar-section {
+    margin: 10px;
     padding: 0 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.164);
 }
 .navbar-title a {
     color: #d6ad25;
@@ -33,7 +34,7 @@
 }
 .navbar-links {
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: 18px;
     letter-spacing: .8px;
 }
@@ -41,6 +42,7 @@
     color: #0cc2ea;
 }
 .navbar-btn {
+    margin: 10px;
     padding: 14px 20px;
     color: white;
     border: 1px solid transparent;

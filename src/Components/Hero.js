@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Technician from "../Assets/customer_service.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarCheck, faAngleUp, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate  } from "react-router-dom";
 import "../Styles/Hero.css";
+import heroVideo from "../Assets/hero.mp4";
+import logo from "../Assets/logo.png";
 
 function Hero() {
   const navigate = useNavigate();
@@ -33,8 +34,18 @@ function Hero() {
   }, []);
 
   return (
-    <div className="section-container">
-      <div className="hero-section">
+    
+      <div className="hero-section" style={{margin: "10px;"}}>
+        <div style={{position: "absolute", zIndex: "-1", objectFit: "fill"}}>
+        <video
+            height={"absolute"}
+            autoPlay
+            loop
+            muted
+            className="hero-video"
+            src={heroVideo}
+          ></video>
+        </div>
         <div className="text-section">
           <p className="text-headline">Need immediate flood or mold services?</p>
           <h2 className="text-title">
@@ -80,11 +91,9 @@ function Hero() {
               <p>Years of Experience</p>
             </div>
           </div>
-        </div>
-
-        <div className="hero-image-section">
-          <img className="hero-image1" src={Technician} alt="Technician" />
-        </div>
+      </div>
+      <div className="hero-logo">
+        <img src={logo} alt="logo" width={300} height={300}/>
       </div>
 
       <div
