@@ -23,14 +23,14 @@ function Technicians() {
 
       <div className="dt-cards-content">
         <TechCard
-          img={profile1}
+          // img={profile1}
           name="Joshua Barnes"
           title="Owner and Leading expert"
           stars="4.9"
           reviews="100+"
         />
         <TechCard
-          img={profile2}
+          // img={profile2}
           name="Caleb Barnes"
           title="Technician"
           stars="4.8"
