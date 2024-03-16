@@ -1,5 +1,4 @@
 import React from "react";
-import Technician from "../Assets/customer_service.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleCheck,

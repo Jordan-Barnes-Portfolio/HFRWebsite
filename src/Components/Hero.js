@@ -3,10 +3,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarCheck, faAngleUp, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate  } from "react-router-dom";
 import "../Styles/Hero.css";
-import heroVideo from "../Assets/hero.mp4";
+import herobg from "../Assets/hero-bg.jpg";
 import logo from "../Assets/logo.png";
+import { useMediaQuery } from "react-responsive";
 
 function Hero() {
+
+  const isMobile = useMediaQuery({ query: '(max-width: 1000px)' });
+  const mainWrapper = isMobile ? "main-wrapper-mobile" : "main-wrapper";
+  
   const navigate = useNavigate();
   const [goUp, setGoUp] = useState(false);
 
@@ -34,18 +39,11 @@ function Hero() {
   }, []);
 
   return (
-    <div className="main-wrapper">
+    <div className={mainWrapper}>
       <div className="hero-section" style={{margin: "10px;"}}>
-        <div style={{position: "absolute", zIndex: "-1", objectFit: "fill"}}>
-          <video
-              height={"absolute"}
-              autoPlay
-              loop
-              muted
-              className="hero-video"
-              src={heroVideo}
-            ></video>
-          </div>
+        <div style={{position: "fixed",  zIndex: "-1", maxWidth: "100%", height: "auto", backgroundSize: "cover"}}>
+            <img src={herobg} alt="loading.." />
+        </div>
           <div className="text-section" >
             <p className="text-headline">Need immediate flood or mold services?</p>
             <h2 className="text-title" style={{width: "100%"}}>
@@ -57,25 +55,25 @@ function Hero() {
               services at your fingertips.
             </p>
             <div style={{display: "-webkit-flex"}}>
-                <div style={{margin: "5px"}}>
+              <div style={{margin: "5px"}}>
+                <button
+                  className="text-appointment-btn"
+                  type="button"
+                  onClick={handleBookAppointmentClick}
+                >
+                <FontAwesomeIcon icon={faCalendarCheck} /> Emergency Service
+                </button>
+              </div>
+              <div style={{margin: "5px"}}>
+                <a href="tel:9137178945">
                   <button
                     className="text-appointment-btn"
                     type="button"
-                    onClick={handleBookAppointmentClick}
                   >
-                  <FontAwesomeIcon icon={faCalendarCheck} /> Emergency Service
+                    <FontAwesomeIcon icon={faPhone} /> Call: 913 717 8945
                   </button>
-                </div>
-                <div style={{margin: "5px"}}>
-                  <a href="tel:9137178945">
-                    <button
-                      className="text-appointment-btn"
-                      type="button"
-                    >
-                      <FontAwesomeIcon icon={faPhone} /> Call: 913 717 8945
-                    </button>
-                  </a>
-                </div>
+                </a>
+              </div>
             </div>
             <div className="text-stats">
               <div className="text-stats-container">

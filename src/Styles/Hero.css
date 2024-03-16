@@ -1,6 +1,13 @@
 .main-wrapper {
     margin-left: auto;
     margin-right: auto;
+    height: auto;
+}
+
+.main-wrapper-mobile {
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;   
 }
 
 .hero-section {
@@ -43,7 +50,7 @@
     line-height: 1.6rem;
 }
 .text-appointment-btn {
-    padding: 14px 20px;
+    padding: 14px;
     color: white;
     border: 1px solid transparent;
     border-radius: 28px;

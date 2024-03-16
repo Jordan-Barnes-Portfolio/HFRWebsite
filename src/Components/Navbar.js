@@ -8,8 +8,11 @@ import {
 import "../Styles/Navbar.css";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useMediaQuery } from "react-responsive";
 
 function Navbar() {
+  const isMobile = useMediaQuery({ query: '(max-width: 1000px)' });
+  const title = isMobile ? "Heartland" : "Heartland Restoration";
   const [nav, setNav] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
@@ -31,7 +34,7 @@ function Navbar() {
     <div className="navbar-section">
       <h1 className="navbar-title">
         <Link to="/">
-          Heartland Restoration<span className="navbar-sign"><img ></img></span>
+          {title}<span className="navbar-sign"><img ></img></span>
         </Link>
       </h1>
 
