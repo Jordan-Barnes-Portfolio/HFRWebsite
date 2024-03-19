@@ -50,8 +50,8 @@ function Hero() {
               Click "Emergency Service" below or call us and we will come right away!
             </h2>
             <p className="text-descritpion" style={{width: "100%"}}>
-              Talk to online Technicians and get advice, expert advice, and assistance from
-              one of our techs within minutes. On-demand restoration
+              Talk to one of our Technicians! You will get expert advice and assistance from
+              one us within minutes. On-demand restoration
               services at your fingertips.
             </p>
             <div style={{display: "-webkit-flex"}}>
