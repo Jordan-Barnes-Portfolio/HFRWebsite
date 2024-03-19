@@ -1,6 +1,8 @@
 import React from "react";
 import TechCard from "./TechCard";
 import "../Styles/Technicians.css";
+import tech1 from "../Assets/tech1.png";
+import tech2 from "../Assets/tech2.png";
 
 function Technicians() {
   return (
@@ -19,15 +21,15 @@ function Technicians() {
 
       <div className="dt-cards-content">
         <TechCard
-          // img={profile1}
+          img={tech2}
           name="Joshua Barnes"
           title="Owner and Leading expert"
           stars="4.9"
           reviews="100+"
         />
         <TechCard
-          // img={profile2}
-          name="Caleb Barnes"
+          img={tech1}
+          name="Billy Graham"
           title="Technician"
           stars="4.8"
           reviews="32"

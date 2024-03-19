@@ -25,8 +25,8 @@ function About() {
         <h4 className="about-text-title">Your Solutions</h4>
 
         <SolutionStep
-          title="Emergency, come now!"
-          description="Book with ease at Heartland Restoration. An expert team of technicians will prioritize you as the customer and come promptly."
+          title="Emeregency? Call or Book now!"
+          description="Book with ease at Heartland Restoration. An expert team of technicians will prioritize you as the customer and arrive promptly."
         />
 
         <SolutionStep
@@ -35,7 +35,7 @@ function About() {
         />
 
         <SolutionStep
-          title="Get Your Solutions"
+          title="Find a Solution"
           description="Our experienced technicians and specialists are here to provide expert advice and personalized plans."
         />
       </div>
