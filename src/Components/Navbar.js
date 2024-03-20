@@ -70,6 +70,11 @@ function Navbar() {
             Appointment
           </a>
         </li>
+        <li>
+          <a href="/createreview" className="navbar-links">
+            Leave a Review
+          </a>
+        </li>
       </ul>
 
       <button

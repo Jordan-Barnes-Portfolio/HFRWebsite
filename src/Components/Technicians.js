@@ -3,6 +3,7 @@ import TechCard from "./TechCard";
 import "../Styles/Technicians.css";
 import tech1 from "../Assets/tech1.png";
 import tech2 from "../Assets/tech2.png";
+import tech3 from "../Assets/tech3.png";
 
 function Technicians() {
   return (
@@ -33,6 +34,13 @@ function Technicians() {
           title="Technician"
           stars="4.8"
           reviews="32"
+        />
+        <TechCard
+          img={tech3}
+          name="Kaleb Barnes"
+          title="Technician"
+          stars="4.8"
+          reviews="27"
         />
       </div>
     </div>
