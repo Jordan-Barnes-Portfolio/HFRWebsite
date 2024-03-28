@@ -40,6 +40,7 @@ function AppointmentForm() {
     if (CustomerEmail === "default") {
       errors.CustomerEmail = "Please enter your email";
     }
+    
     if (!appointmentTime) {
       errors.appointmentTime = "Appointment time is required";
     } else {
@@ -126,7 +127,7 @@ function AppointmentForm() {
               onChange={(e) => setCustomerEmail(e.target.value)}
               required
             />
-            {formErrors.CustomerNumber && <p className="error-message">{formErrors.CustomerNumber}</p>}
+            {formErrors.CustomerEmail && <p className="error-message">{formErrors.CustomerEmail}</p>}
           </label>
           <br />
           <label>
