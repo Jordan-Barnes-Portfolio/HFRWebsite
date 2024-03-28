@@ -4,13 +4,15 @@ import { faCalendarCheck, faAngleUp, faPhone } from "@fortawesome/free-solid-svg
 import { useNavigate  } from "react-router-dom";
 import "../Styles/Hero.css";
 import herobg from "../Assets/hero-bg.jpg";
+import herovid from "../Assets/herobannermedia.mp4";
 import logo from "../Assets/logo.png";
 import { useMediaQuery } from "react-responsive";
+
 
 function Hero() {
 
   const isMobile = useMediaQuery({ query: '(max-width: 1000px)' });
-  const mainWrapper = isMobile ? "main-wrapper-mobile" : "main-wrapper";
+  const hero_bg = isMobile ? herobg : herovid;
   
   const navigate = useNavigate();
   const [goUp, setGoUp] = useState(false);
@@ -39,10 +41,11 @@ function Hero() {
   }, []);
 
   return (
-    <div className={mainWrapper}>
       <div className="hero-section" style={{margin: "10px;"}}>
         <div style={{position: "fixed",  zIndex: "-1", maxWidth: "100%", height: "auto", backgroundSize: "cover"}}>
-            <img src={herobg} alt="loading.." />
+          {
+            isMobile ? <img src={hero_bg} alt="hero-bg" /> : <video autoPlay muted loop><source src={hero_bg} type="video/mp4"/></video>
+          }
         </div>
           <div className="text-section" >
             <p className="text-headline">Need immediate flood or mold services?</p>
@@ -103,7 +106,6 @@ function Hero() {
           <FontAwesomeIcon icon={faAngleUp} />
         </div>
       </div>
-    </div>
   );
 }
 
