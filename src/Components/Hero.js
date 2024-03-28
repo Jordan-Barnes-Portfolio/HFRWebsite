@@ -73,7 +73,7 @@ function Hero() {
                     className="text-appointment-btn"
                     type="button"
                   >
-                    <FontAwesomeIcon icon={faPhone} /> Call: 913 717 8945
+                    <FontAwesomeIcon icon={faPhone} /> Call: 913 289 3104
                   </button>
                 </a>
               </div>

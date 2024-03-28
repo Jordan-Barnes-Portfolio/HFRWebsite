@@ -1,6 +1,6 @@
 import React from "react";
 import InformationCard from "./InformationCard";
-import { faHeartPulse, faTruckMedical, faTooth, faHourglass, faBook, faIndustry } from "@fortawesome/free-solid-svg-icons";
+import { faHourglass, faBook, faIndustry } from "@fortawesome/free-solid-svg-icons";
 import "../Styles/Info.css";
 
 function Info() {
@@ -11,11 +11,12 @@ function Info() {
           <span>What We Do</span>
         </h3>
         <p className="info-description">
-          We bring flood restoration to your convenience, offering a comprehensive
-          range of on-demand services tailored to your needs. Our
-          platform allows you to connect with experienced online technicians who
-          provide expert advice, issue online instruction, and offer
-          quick professional advice whenever you require them.
+          Specializing in a range of flood-related issues including burst pipes, flood repair, water leaks, and mold remediation, 
+          we're equipped to handle any challenge that comes our way. Whether it's extracting water, restoring damaged structures, 
+          or mitigating mold growth, our experienced team is here to restore your property to its pre-flood condition efficiently 
+          and effectively. When disaster strikes, you can rely on Heartland Restoration to be your trusted partner in recovery. 
+          Don't hesitate to reach out to us today to discover how our flood restoration services can help you navigate through water 
+          damage with confidence.
         </p>
       </div>
 

@@ -77,14 +77,14 @@ function Navbar() {
         </li>
       </ul>
 
-      <button
+      {/* <button
         className="navbar-btn"
         type="button"
         disabled={isButtonDisabled}
         onClick={handleChatBtnClick}
       >
         <FontAwesomeIcon icon={faCommentDots} /> Live Chat
-      </button>
+      </button> */}
 
       {/* Mobile */}
       <div className={`mobile-navbar ${nav ? "open-nav" : ""}`}>
