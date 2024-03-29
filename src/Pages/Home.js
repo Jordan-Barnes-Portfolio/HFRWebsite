@@ -9,6 +9,7 @@ import Technicians from "../Components/Technicians";
 import Footer from "../Components/Footer";
 
 function Home() {
+  
   return (
     <div className="home-section">
       <Navbar />
