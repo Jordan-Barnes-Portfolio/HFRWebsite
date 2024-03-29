@@ -165,7 +165,7 @@ function AppointmentForm() {
             Confirm Appointment
           </button>
 
-          <p className="success-message" style={{display: isSubmitted ? "block" : "none"}}>Appointment details has been sent to the Customers phone number via SMS.</p>
+          <p className="success-message" style={{display: isSubmitted ? "block" : "none"}}>Your appointment has been scheduled, we will contact you promptly with details!</p>
         </form>
       </div>
 
