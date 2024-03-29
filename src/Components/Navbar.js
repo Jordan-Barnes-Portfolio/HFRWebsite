@@ -71,7 +71,7 @@ function Navbar() {
           </a>
         </li>
         <li>
-          <a href="/createreview" className="navbar-links">
+          <a href="https://www.google.com/maps/place//data=!4m3!3m2!1s0x67bbabee79e27d99:0x619c3c1752aca767!12e1?source=g.page.m.ia._&laa=nmx-review-solicitation-ia2" className="navbar-links">
             Leave a Review
           </a>
         </li>
