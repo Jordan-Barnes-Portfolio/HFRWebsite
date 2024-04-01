@@ -40,7 +40,11 @@ function Hero() {
     };
   }, []);
 
+
+
+  
   return (
+        
       <div className="hero-section" style={{margin: "10px;"}}>
         <div style={{position: "fixed",  zIndex: "-1", maxWidth: "100%", height: "auto", backgroundSize: "cover"}}>
           {
@@ -64,11 +68,14 @@ function Hero() {
                   type="button"
                   onClick={handleBookAppointmentClick}
                 >
-                <FontAwesomeIcon icon={faCalendarCheck} /> Emergency Service
+                <FontAwesomeIcon icon={faCalendarCheck} /> Schedule emergency Service
                 </button>
               </div>
+              <div style={{margin: "5px", display: "block", alignContent: "center", color: "white"}}>
+                <h1>OR</h1>
+              </div>
               <div style={{margin: "5px"}}>
-                <a href="tel:9137178945">
+                <a href="tel:9132893104">
                   <button
                     className="text-appointment-btn"
                     type="button"
