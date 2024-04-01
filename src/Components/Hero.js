@@ -86,8 +86,8 @@ function Hero() {
             </div>
             <div className="text-stats">
               <div className="text-stats-container">
-                <p>45k+</p>
-                <p>Received Customers</p>
+                <p>100%</p>
+                <p>Guaranteed Satisfaction</p>
               </div>
 
               <div className="text-stats-container">
