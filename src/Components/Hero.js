@@ -67,7 +67,7 @@ function Hero() {
                   type="button"
                   onClick={handleBookAppointmentClick}
                 >
-                <FontAwesomeIcon icon={faCalendarCheck} /> Schedule emergency Service
+                <FontAwesomeIcon icon={faCalendarCheck} /> Schedule emergency service
                 </button>
               </div>
               <div style={{margin: "5px", display: "block", alignContent: "center", color: "white"}}>
