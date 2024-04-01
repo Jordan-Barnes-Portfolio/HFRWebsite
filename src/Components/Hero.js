@@ -44,7 +44,6 @@ function Hero() {
 
   
   return (
-        
       <div className="hero-section" style={{margin: "10px;"}}>
         <div style={{position: "fixed",  zIndex: "-1", maxWidth: "100%", height: "auto", backgroundSize: "cover"}}>
           {

@@ -64,15 +64,15 @@ function Footer() {
           <p className="ft-list-title">Talk To Us</p>
           <ul className="ft-list-items">
             <li>
-              <a href="mailto:appointment@heartlandfloodrestoration.com">support@heartlandfloodrestoration.com</a>
+              <a href="mailto:appointment@heartlandfloodrestoration.com">joshua@heartlandfloodrestoration.com</a>
             </li>
             <li>
               <a href="mailto:appointment@heartlandfloodrestoration.com">
-                appointment@heartlandfloodrestoration.com
+                jordan@heartlandfloodrestoration.com
               </a>
             </li>
             <li>
-              <a href="tel:+913 289 3104">+913 289 3104</a>
+              <a href="tel:+913 289 3104">Call: 913 289 3104</a>
             </li>
           </ul>
         </div>

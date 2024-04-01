@@ -6,9 +6,19 @@
     gap: 24px;
     background-color: white;
 }
+
+.appointment-container {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    background-color: white;
+    margin: 10px;
+    align-items: center;
+    border: 2px solid #d7d3d3;
+    border-radius: 12px;
+}
 /* Image */
 .ba-image-content {
-    width: 50%;
     max-width: 100%;
     text-align: center;
 }

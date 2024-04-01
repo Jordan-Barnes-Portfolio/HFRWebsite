@@ -3,17 +3,24 @@ import { Link } from "react-router-dom";
 import "../Styles/AppointmentForm.css";
 import { ToastContainer, toast } from "react-toastify";
 import emailjs from '@emailjs/browser';
+import "../Styles/Hero.css";
+import herobg from "../Assets/hero-bg.jpg";
+import herovid from "../Assets/herobannermedia.mp4";
+import { useMediaQuery } from "react-responsive";
+
+
 
 function AppointmentForm() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
+  const isMobile = useMediaQuery({ query: '(max-width: 1000px)' });
+  const hero_bg = isMobile ? herobg : herovid;
   const [CustomerName, setCustomerName] = useState("");
   const [CustomerNumber, setCustomerNumber] = useState("");
-  const [CustomerEmail, setCustomerEmail] = useState("default");
+  const [CustomerEmail, setCustomerEmail] = useState("");
   const [appointmentTime, setAppointmentTime] = useState("");
-  const [preferredMode, setPreferredMode] = useState("default");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formErrors, setFormErrors] = useState({});
 
@@ -27,8 +34,6 @@ function AppointmentForm() {
 
     if (!CustomerName.trim()) {
       errors.CustomerName = "Customer name is required";
-    } else if (CustomerName.trim().length < 4) {
-      errors.CustomerName = "Customer name must be at least 4 characters";
     }
 
     if (!CustomerNumber.trim()) {
@@ -37,30 +42,13 @@ function AppointmentForm() {
       errors.CustomerNumber = "Customer phone number must be of 10 digits";
     }
 
-    if (CustomerEmail === "default") {
-      errors.CustomerEmail = "Please enter your email";
-    }
-    
-    if (!appointmentTime) {
-      errors.appointmentTime = "Appointment time is required";
-    } else {
-      const selectedTime = new Date(appointmentTime).getTime();
-      const currentTime = new Date().getTime();
-      if (selectedTime <= currentTime) {
-        errors.appointmentTime = "Please select a future appointment time";
-      }
-    }
-    if (preferredMode === "default") {
-      errors.preferredMode = "Please select preferred mode";
-    }
-
     if (Object.keys(errors).length > 0) {
       setFormErrors(errors);
       return;
     }
 
     var theMessage = "Appointment Date/Time: " + appointmentTime + "\nContact Phone: " + CustomerNumber + 
-    "\nCustomer Email: " + CustomerEmail + "\nMode: " + preferredMode;
+    "\nCustomer Email: " + CustomerEmail;
 
     emailjs.send('service_dsufijf', 'template_jz5nakq', {
       email_from: CustomerName,
@@ -73,9 +61,8 @@ function AppointmentForm() {
     // Reset form fields and errors after successful submission
     setCustomerName("");
     setCustomerNumber("");
-    setCustomerEmail("default");
+    setCustomerEmail("");
     setAppointmentTime("");
-    setPreferredMode("default");
     setFormErrors({});
     
     toast.success("Appointment Scheduled !", {
@@ -86,21 +73,20 @@ function AppointmentForm() {
   };
 
   return (
-    <div className="appointment-form-section">
-      <h1 className="legal-siteTitle">
-        <Link to="/">
-          Heartland Restoration<span className="legal-siteSign"></span>
-        </Link>
-      </h1>
-
+    <div className="appointment-container">
+      <div style={{position: "fixed",  zIndex: "-1", maxWidth: "100%", height: "auto", backgroundSize: "cover"}}>
+          {
+            isMobile ? <img src={hero_bg} alt="hero-bg" /> : <video autoPlay muted loop><source src={hero_bg} type="video/mp4"/></video>
+          }
+        </div>
       <div className="form-container">
         <h2 className="form-title">
-          <span>Book Appointment Online</span>
+          <span>Book Appointment</span>
         </h2>
 
         <form className="form-content" onSubmit={handleSubmit}>
           <label>
-            Customer Full Name:
+            Name:
             <input
               type="text"
               value={CustomerName}
@@ -112,7 +98,7 @@ function AppointmentForm() {
 
           <br />
           <label>
-            Customer Phone Number:
+            Phone Number:
             <input
               type="text"
               value={CustomerNumber}
@@ -123,7 +109,7 @@ function AppointmentForm() {
           </label>
           <br />
           <label>
-            Customer Email:
+            Email:
             <input
               type="text"
               value={CustomerEmail}
@@ -143,34 +129,12 @@ function AppointmentForm() {
             />
             {formErrors.appointmentTime && <p className="error-message">{formErrors.appointmentTime}</p>}
           </label>
-
-          <br />
-          <label>
-            Preferred Mode:
-            <select
-              value={preferredMode}
-              onChange={(e) => setPreferredMode(e.target.value)}
-              required
-            >
-              <option value="default">Select</option>
-              <option value="in person">In Person</option>
-              <option value="voice">Voice Call</option>
-              <option value="video">Video Call</option>
-            </select>
-            {formErrors.preferredMode && <p className="error-message">{formErrors.preferredMode}</p>}
-          </label>
-
-          <br />
           <button type="submit" className="text-appointment-btn">
             Confirm Appointment
           </button>
 
           <p className="success-message" style={{display: isSubmitted ? "block" : "none"}}>Your appointment has been scheduled, we will contact you promptly with details!</p>
         </form>
-      </div>
-
-      <div className="legal-footer">
-        <p>© 2023-2024 Heartland Flood and Restoration. All rights reserved.</p>
       </div>
 
       <ToastContainer autoClose={5000} limit={1} closeButton={false} />
