@@ -1,8 +1,10 @@
 .Technician-section {
     padding: 32px;
-    margin: 0 0 32px 0;
+    margin: 32px;
     text-align: center;
     background-color: white;
+    border: 2px;
+    border-radius: 12px;
 }
 .dt-title-content {
     margin: 0 0 64px 0;
@@ -49,12 +51,11 @@
     height: 400px;
     gap: 32px;
     text-align: left;
-    font-family: 'Rubik', sans-serif;
 }
 .dt-card-img {
     width: 100%;
     height: 275px;
-    padding: 16px 32px 0;
+    padding: 20px;
     background-position: center;
     background-color: #DDE5F8;
     border-radius: 20px;
