@@ -26,8 +26,8 @@ function Info() {
                 <div style={{float: "left", height: "100%", width: "50%", margin: "auto"}}>
                     <img src={InformationCard} style={{ height:"100%", maxWidth: "100%",  border: "2px", borderRadius: "12px" }}/> 
                 </div>
-                <div style={{float: "right", width: "50%"}}>
-                    <div className="ba-text-content">
+                <div style={{float: "right", width: "50%", alignContent: "center"}}>
+                    <div>
                         <h3 className="ba-title">
                         <span>Why Choose Heartland Restoration</span>
                         </h3>
