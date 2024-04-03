@@ -3,10 +3,10 @@ import Navbar from "../Components/Navbar";
 import Hero from "../Components/Hero";
 import Info from "../Components/Info";
 import About from "../Components/About";
-import BookAppointment from "../Components/BookAppointment";
 import Reviews from "../Components/Reviews";
 import Technicians from "../Components/Technicians";
 import Footer from "../Components/Footer";
+import InfoExtra from "../Components/InfoExtra";
 
 function Home() {
   
@@ -14,9 +14,9 @@ function Home() {
     <div className="home-section">
       <Navbar />
       <Hero />
+      <InfoExtra />
       <Info />
       <About />
-      <BookAppointment />
       <Reviews />
       <Technicians />
       <Footer />
