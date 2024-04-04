@@ -25,6 +25,11 @@ function Hero() {
     navigate("/appointment");
   };
 
+  const handleCall = () => {
+    window.gtag('config', 'AW-1032093322');
+    window.gtag('event', 'conversion', {'send_to': 'AW-1032093322/DBHRCJ74wqIZEIr9kewD'});
+  };
+
   useEffect(() => {
     const onPageScroll = () => {
       if (window.scrollY > 600) {
@@ -68,7 +73,7 @@ function Hero() {
                 </button>
               </div>
               <div style={{margin: "5px"}}>
-                <a href="tel:9132893104">
+                <a href="tel:9132893104" onClick={handleCall}>
                   <button
                     className="text-appointment-btn"
                     type="button"
