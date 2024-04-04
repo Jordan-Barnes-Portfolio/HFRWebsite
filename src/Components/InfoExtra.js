@@ -32,11 +32,11 @@ function Info() {
                         <span>Why Choose Heartland Restoration</span>
                         </h3>
                         <p className="ba-description">
-                        Our team of experienced technicians and flood experts use will 
-                        come at your convenience to assess your home and design personalized 
-                        plans to attack the problem. From comprehensive investigations to 
-                        advanced flood and mold care, we are committed to helping you maintain 
-                        a safe home.
+                            Our team of experienced technicians and flood experts use will 
+                            come at your convenience to assess your home and design personalized 
+                            plans to attack the problem. From comprehensive investigations to 
+                            advanced flood and mold care, we are committed to helping you maintain 
+                            a safe home.
                         </p>
         
                         <p className="ba-checks ba-check-first">
@@ -93,10 +93,8 @@ function Info() {
                 </div>
             </div>
                 
-        );
-                
+        );       
     }
-
 }
 
 export default Info;
