@@ -2,21 +2,20 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../Styles/AppointmentForm.css";
 import { ToastContainer, toast } from "react-toastify";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import "../Styles/Hero.css";
 import herobg from "../Assets/hero-bg.jpg";
 import herovid from "../Assets/herobannermedia.mp4";
 import { useMediaQuery } from "react-responsive";
-
-
 
 function AppointmentForm() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  const isMobile = useMediaQuery({ query: '(max-width: 1000px)' });
+  const isMobile = useMediaQuery({ query: "(max-width: 1000px)" });
   const hero_bg = isMobile ? herobg : herovid;
+  const [CustomerMessage, setCustomerMessage] = useState("");
   const [CustomerName, setCustomerName] = useState("");
   const [CustomerNumber, setCustomerNumber] = useState("");
   const [CustomerEmail, setCustomerEmail] = useState("");
@@ -47,24 +46,39 @@ function AppointmentForm() {
       return;
     }
 
-    var theMessage = "Appointment Date/Time: " + appointmentTime + "\nContact Phone: " + CustomerNumber + 
-    "\nCustomer Email: " + CustomerEmail;
+    var theMessage =
+      "Appointment Date/Time: " +
+      appointmentTime +
+      "\nContact Phone: " +
+      CustomerNumber +
+      "\nCustomer Email: " +
+      CustomerEmail +
+      "\nAdditional Details: " +
+      CustomerMessage;
 
-    emailjs.send('service_dsufijf', 'template_jz5nakq', {
-      email_from: CustomerName,
-      message: theMessage,
-    }, 'Qa5vDU0zqykjmk4N7');
+    emailjs.send(
+      "service_dsufijf",
+      "template_jz5nakq",
+      {
+        email_from: CustomerName,
+        message: theMessage,
+      },
+      "Qa5vDU0zqykjmk4N7"
+    );
 
-    window.gtag('config', 'AW-1032093322');
-    window.gtag('event', 'conversion', {'send_to': 'AW-1032093322/tFwICLP4k6MZEIr9kewD'});
-    
+    window.gtag("config", "AW-1032093322");
+    window.gtag("event", "conversion", {
+      send_to: "AW-1032093322/tFwICLP4k6MZEIr9kewD",
+    });
+
     // Reset form fields and errors after successful submission
     setCustomerName("");
     setCustomerNumber("");
     setCustomerEmail("");
     setAppointmentTime("");
+    setCustomerMessage("");
     setFormErrors({});
-    
+
     toast.success("Appointment Scheduled !", {
       position: toast.POSITION.TOP_CENTER,
       onOpen: () => setIsSubmitted(true),
@@ -74,11 +88,23 @@ function AppointmentForm() {
 
   return (
     <div className="appointment-container">
-      <div style={{position: "fixed",  zIndex: "-1", maxWidth: "100%", height: "auto", backgroundSize: "cover"}}>
-          {
-            isMobile ? <img src={hero_bg} alt="hero-bg" /> : <video autoPlay muted loop><source src={hero_bg} type="video/mp4"/></video>
-          }
-        </div>
+      <div
+        style={{
+          position: "fixed",
+          zIndex: "-1",
+          maxWidth: "100%",
+          height: "auto",
+          backgroundSize: "cover",
+        }}
+      >
+        {isMobile ? (
+          <img src={hero_bg} alt="hero-bg" />
+        ) : (
+          <video autoPlay muted loop>
+            <source src={hero_bg} type="video/mp4" />
+          </video>
+        )}
+      </div>
       <div className="form-container">
         <h2 className="form-title">
           <span>Book Appointment</span>
@@ -93,7 +119,9 @@ function AppointmentForm() {
               onChange={(e) => setCustomerName(e.target.value)}
               required
             />
-            {formErrors.CustomerName && <p className="error-message">{formErrors.CustomerName}</p>}
+            {formErrors.CustomerName && (
+              <p className="error-message">{formErrors.CustomerName}</p>
+            )}
           </label>
 
           <br />
@@ -105,7 +133,9 @@ function AppointmentForm() {
               onChange={(e) => setCustomerNumber(e.target.value)}
               required
             />
-            {formErrors.CustomerNumber && <p className="error-message">{formErrors.CustomerNumber}</p>}
+            {formErrors.CustomerNumber && (
+              <p className="error-message">{formErrors.CustomerNumber}</p>
+            )}
           </label>
           <br />
           <label>
@@ -116,7 +146,9 @@ function AppointmentForm() {
               onChange={(e) => setCustomerEmail(e.target.value)}
               required
             />
-            {formErrors.CustomerEmail && <p className="error-message">{formErrors.CustomerEmail}</p>}
+            {formErrors.CustomerEmail && (
+              <p className="error-message">{formErrors.CustomerEmail}</p>
+            )}
           </label>
           <br />
           <label>
@@ -127,13 +159,30 @@ function AppointmentForm() {
               onChange={(e) => setAppointmentTime(e.target.value)}
               required
             />
-            {formErrors.appointmentTime && <p className="error-message">{formErrors.appointmentTime}</p>}
+            {formErrors.appointmentTime && (
+              <p className="error-message">{formErrors.appointmentTime}</p>
+            )}
           </label>
+          <label>
+            Any additional details?
+            <input
+              type="text"
+              value={CustomerMessage}
+              onChange={(e) => setCustomerMessage(e.target.value)}
+            ></input>
+          </label>
+
           <button type="submit" className="text-appointment-btn">
             Confirm Appointment
           </button>
 
-          <p className="success-message" style={{display: isSubmitted ? "block" : "none"}}>Your appointment has been scheduled, we will contact you promptly with details!</p>
+          <p
+            className="success-message"
+            style={{ display: isSubmitted ? "block" : "none" }}
+          >
+            Your appointment has been scheduled, we will contact you promptly
+            with details!
+          </p>
         </form>
       </div>
 
