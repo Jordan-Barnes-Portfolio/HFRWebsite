@@ -6,6 +6,7 @@ import Legal from "./Pages/Legal";
 import NotFound from "./Pages/NotFound";
 import Appointment from "./Pages/Appointment";
 import AddReview from "./Pages/AddReview";
+import Projects from "./Pages/Projects";
 import { inject } from "@vercel/analytics";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/appointment" element={<Appointment />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/createreview" element={<AddReview />} />
+          <Route path="/projects" element={<Projects />} />
         </Routes>
       </Router>
     </div>
