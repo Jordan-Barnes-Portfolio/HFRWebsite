@@ -24,23 +24,17 @@ function Technicians() {
         <TechCard
           img={joshua}
           name="Joshua Barnes"
-          title="Owner and Leading expert"
-          stars="4.9"
-          reviews="100+"
+          title="General Manager"
         />
         <TechCard
           img={billy}
           name="Billy Graham"
           title="Technician"
-          stars="4.8"
-          reviews="32"
         />
         <TechCard
           img={kaleb}
           name="Kaleb Barnes"
           title="Technician"
-          stars="4.8"
-          reviews="27"
         />
       </div>
     </div>

@@ -33,9 +33,6 @@ function Reviews() {
   return (
     <div className="review-section" id="reviews">
       <div className="rw-text-content">
-        <p className="rw-text-title">
-          <span className="rw-text-num">100+ Customers</span>
-        </p>
 
         <p className="rw-text-desc">Don't believe us, Check out  what clients have said</p>
 

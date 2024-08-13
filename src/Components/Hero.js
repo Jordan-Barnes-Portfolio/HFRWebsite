@@ -83,22 +83,6 @@ function Hero() {
                 </a>
               </div>
             </div>
-            <div className="text-stats">
-              <div className="text-stats-container">
-                <p>100%</p>
-                <p>Guaranteed Satisfaction</p>
-              </div>
-
-              <div className="text-stats-container">
-                <p>10+</p>
-                <p>Expert Technicians</p>
-              </div>
-
-              <div className="text-stats-container">
-                <p>10+</p>
-                <p>Years of Experience</p>
-              </div>
-            </div>
         </div>
         <div className="hero-logo">
           <img src={logo} alt="logo" width={300} height={300}/>

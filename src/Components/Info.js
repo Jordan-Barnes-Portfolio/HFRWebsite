@@ -33,11 +33,7 @@ function Info() {
 
         <InformationCard
           title="Book an appointment"
-          description="Our team of experienced technicians and flood experts use
-            will come at your convenience to assess your home and
-            design personalized plans to attack the problem. From comprehensive investigations
-            to advanced flood and mold care, we are committed to helping you maintain
-            a safe home."
+          description="Our values are Trust, Partnership & Excellence. We pride ourselves on our transparency and ability to handle emergency situations. We lead you through the entire process and provide you a mobile app that allows you oversee and have control over the entire process. Trust is our number one value and that means we handle the entire loss, work with insurance & put you back on track."
           icon={faBook}
         />
 
