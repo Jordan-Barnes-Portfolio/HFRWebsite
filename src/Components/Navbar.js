@@ -28,8 +28,8 @@ function Navbar() {
           <li><a href="#about" className="navbar-links">About</a></li>
           <li><a href="#reviews" className="navbar-links">Reviews</a></li>
           <li><a href="#Technicians" className="navbar-links">Technicians</a></li>
-          <li><a href="/appointment" className="navbar-links">Appointment</a></li>
-          <li><a href="https://sites.google.com/heartlandflood.com/resto-resources/resources" className="navbar-links">Resto-Resources</a></li>
+          <li><Link to="/appointment" className="navbar-links">Appointment</Link></li>
+          <li><Link to="/restoration-resources" className="navbar-links">Restoration Resources</Link></li>
           <li><a href="https://www.google.com/maps/place//data=!4m3!3m2!1s0x67bbabee79e27d99:0x619c3c1752aca767!12e1?source=g.page.m.ia._&laa=nmx-review-solicitation-ia2" className="navbar-links">Leave a Review</a></li>
         </ul>
       )}
@@ -46,7 +46,8 @@ function Navbar() {
               <li><a onClick={openNav} href="#about">About</a></li>
               <li><a onClick={openNav} href="#reviews">Reviews</a></li>
               <li><a onClick={openNav} href="#Technicians">Technicians</a></li>
-              <li><a onClick={openNav} href="/appointment">Appointment</a></li>
+              <li><Link onClick={openNav} to="/appointment">Appointment</Link></li>
+              <li><Link onClick={openNav} to="/restoration-resources">Restoration Resources</Link></li>
               <li><a onClick={openNav} href="https://www.google.com/maps/place//data=!4m3!3m2!1s0x67bbabee79e27d99:0x619c3c1752aca767!12e1?source=g.page.m.ia._&laa=nmx-review-solicitation-ia2">Leave a Review</a></li>
             </ul>
           </div>

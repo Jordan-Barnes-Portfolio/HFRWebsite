@@ -7,10 +7,10 @@ import NotFound from "./Pages/NotFound";
 import Appointment from "./Pages/Appointment";
 import AddReview from "./Pages/AddReview";
 import Projects from "./Pages/Projects";
+import RestorationResources from "./Pages/RestorationResources";  // Add this line
 import { inject } from "@vercel/analytics";
 
 function App() {
-
   inject();
 
   return (
@@ -20,9 +20,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/legal" element={<Legal />} />
           <Route path="/appointment" element={<Appointment />} />
-          <Route path="*" element={<NotFound />} />
           <Route path="/createreview" element={<AddReview />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/restoration-resources" element={<RestorationResources />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </div>
