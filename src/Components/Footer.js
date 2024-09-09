@@ -64,11 +64,11 @@ function Footer() {
           <p className="ft-list-title">Talk To Us</p>
           <ul className="ft-list-items">
             <li>
-              <a href="mailto:appointment@heartlandfloodrestoration.com">joshua@heartlandfloodrestoration.com</a>
+              <a href="mailto:appointment@heartlandflood.com">joshua@heartlandflood.com</a>
             </li>
             <li>
-              <a href="mailto:appointment@heartlandfloodrestoration.com">
-                jordan@heartlandfloodrestoration.com
+              <a href="mailto:appointment@heartlandflood.com">
+                jordan@heartlandflood.com
               </a>
             </li>
             <li>
@@ -79,7 +79,7 @@ function Footer() {
       </div>
 
       <div className="ft-copyright">
-        <p>© 2023-2024 heartlandfloodrestoration. All rights reserved.</p>
+        <p>© 2023-2024 heartlandflood. All rights reserved.</p>
 
         <ul className="ft-social-links">
           <li>

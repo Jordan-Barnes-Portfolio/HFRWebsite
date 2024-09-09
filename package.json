@@ -2,7 +2,7 @@
   "name": "heartlandfloodrestoration",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://www.heartlandfloodrestoration.com/",
+  "homepage": "https://www.heartlandflood.com/",
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
