@@ -124,7 +124,10 @@ function FloodContent() {
             <img src={mascot} alt="Heartland Restoration Mascot" />
           </div>
           <div className="resto-resources-card">
+            <a href="https://www.heartlandrestoration.net/restoration-resources">
             <h3>Resto-Resources</h3>
+            </a>
+            
             <ul>
               <li>What Insurance Expects You To Do</li>
               <li>What To Do While You Wait</li>
