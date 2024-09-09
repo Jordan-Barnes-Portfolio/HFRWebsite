@@ -135,20 +135,20 @@ function FloodContent() {
 
       <div className="location-banner">
         {distance !== null ? (
-          distance <= 40 ? (
+          distance <= 40000 ? (
             <>
-              <div className="location-info">
-                <h3>Your Location: {city}, {state}</h3>
-                <p>Your Restoration Experts Are {Math.round(distance * 1.25)} minutes away</p>
-              </div>
-              <div className="service-rating">
-                <p>24/7 Emergency Service</p>
-                <div className="stars">★★★★★ 5 (30++ reviews)</div>
-              </div>
-              <a href={`tel:${phoneNumber}`} className="call-button">
-                <FontAwesomeIcon icon={faPhone} /> Call {phoneNumber}
-              </a>
-            </>
+        <div className="location-info">
+          <h3>Your Location: {city}, {state}</h3>
+          <p className="expert-distance"><strong>Your Restoration Experts Are <span className="highlight-text">{Math.round(distance * 1.25)} minutes away</span></strong></p>
+        </div>
+        <div className="service-rating">
+          <p>24/7 Emergency Service</p>
+          <div className="stars">★★★★★ 5 (40++ reviews)</div>
+        </div>
+        <a href={`tel:${phoneNumber}`} className="call-button">
+          <FontAwesomeIcon icon={faPhone} /> Call {phoneNumber}
+        </a>
+      </>
           ) : (
             <div className="out-of-service">
               Unfortunately, we don't service {city}, {state} yet. Call us to get referred to a mitigation partner.

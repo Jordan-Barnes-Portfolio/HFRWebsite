@@ -7,7 +7,6 @@ function Flood() {
   return (
     <div className="flood-page">
       <FloodContent />
-      <Footer />
     </div>
   );
 }
