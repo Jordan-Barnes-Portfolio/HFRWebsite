@@ -151,7 +151,7 @@ function FloodContent() {
             </>
           ) : (
             <div className="out-of-service">
-              Unfortunately, we don't {city}, {state} yet. Call us to get referred to a mitigation partner.
+              Unfortunately, we don't service {city}, {state} yet. Call us to get referred to a mitigation partner.
             </div>
           )
         ) : error ? (
