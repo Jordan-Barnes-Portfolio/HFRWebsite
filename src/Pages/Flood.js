@@ -6,7 +6,6 @@ import Footer from "../Components/Footer";
 function Flood() {
   return (
     <div className="flood-page">
-      <Navbar />
       <FloodContent />
       <Footer />
     </div>

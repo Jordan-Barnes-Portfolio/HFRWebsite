@@ -1,22 +1,35 @@
 .flood-content {
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Arial', sans-serif;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    position: relative;
+  }
+  
+  .flood-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .logo img {
+    max-width: 200px;
   }
   
   .help-banner {
     background-color: #f0f0f0;
-    padding: 10px;
+    padding: 10px 20px;
+    width: 30%;
     text-align: center;
-    margin-bottom: 20px;
-    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.311);
+    border-radius: 4px;
   }
   
   .help-banner h2 {
     margin: 0;
     color: #00a0e3;
-    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
   }
   
   .time-options {
@@ -27,14 +40,52 @@
     color: #ff7f00;
   }
   
+  .contact-info {
+    text-align: right;
+  }
+  
+  .contact-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #00a0e3;
+  }
+  
+  .contact-info h2 {
+    margin: 5px 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .phone-number {
+    font-size: 24px;
+    color: #ff7f00;
+    text-decoration: none;
+  }
+  
   .main-content {
+    margin-bottom: 20px;
+  }
+  
+  .main-content h1 {
+    color: #333;
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .content-flex {
     display: flex;
     gap: 20px;
-    margin-bottom: 20px;
   }
   
   .text-content {
     flex: 1;
+    font-size: larger;
+  }
+  
+  .call-now {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff7f00;
   }
   
   .image-content {
@@ -47,14 +98,79 @@
     border-radius: 8px;
   }
   
-  .location-banner {
+  .resources-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .mascot {
+    width: 150px;
+  }
+  
+  .mascot img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .resto-resources-card {
+    flex: 1;
     background-color: #f0f0f0;
     padding: 20px;
+    border-radius: 4px;
+  }
+  
+  .resto-resources-card h3 {
+    color: #00a0e3;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  
+  .resto-resources-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .resto-resources-card li {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .location-banner {
+    background-color: #f0f0f0;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
-    border-radius: 8px;
+    border-radius: 4px;
+  }
+  
+  .location-info h3 {
+    margin: 0;
+    color: #ff7f00;
+    font-size: 18px;
+  }
+  
+  .location-info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #00a0e3;
+  }
+  
+  .service-rating {
+    text-align: center;
+  }
+  
+  .service-rating p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .stars {
+    color: #ff7f00;
+    font-size: 14px;
   }
   
   .call-button {
@@ -62,37 +178,34 @@
     color: white;
     padding: 10px 20px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 4px;
     font-weight: bold;
+    font-size: 18px;
   }
   
-  .sidebar {
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 8px;
+  .out-of-service {
+    color: #ff0000;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
   }
   
-  .sidebar ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .sidebar li {
-    margin-bottom: 10px;
-  }
-  
-  .mascot {
-    margin-top: 20px;
+  .location-error, .loading {
+    text-align: center;
+    font-style: italic;
+    width: 100%;
   }
   
   @media screen and (max-width: 768px) {
-    .main-content,
     .location-banner {
       flex-direction: column;
     }
   
     .location-info,
-    .service-rating {
+    .service-rating,
+    .call-button,
+    .out-of-service {
+      width: 100%;
       text-align: center;
       margin-bottom: 10px;
     }
