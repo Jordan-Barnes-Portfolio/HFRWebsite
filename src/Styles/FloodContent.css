@@ -17,7 +17,7 @@
   }
   
   .logo img {
-    max-width: 100px;
+    max-width: 125px;
   }
   
   .help-banner {
@@ -85,6 +85,7 @@
   
   .text-content, .image-content {
     width: 100%;
+    font-size: x-large;
   }
   
   .call-now {
@@ -225,7 +226,6 @@
   
     .text-content, .image-content {
       width: 48%;
-      font-size: x-large;
     }
   
     .resources-section {
