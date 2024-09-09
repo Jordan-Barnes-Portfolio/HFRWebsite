@@ -139,11 +139,11 @@ function FloodContent() {
             <>
               <div className="location-info">
                 <h3>Your Location: {city}, {state}</h3>
-                <p>Your Restoration Experts Are {Math.round(distance * 2)} minutes Away</p>
+                <p>Your Restoration Experts Are {Math.round(distance * 1.25)} minutes Away</p>
               </div>
               <div className="service-rating">
                 <p>24/7 Emergency Service</p>
-                <div className="stars">★★★★★ 4.8 (257 reviews)</div>
+                <div className="stars">★★★★★ 5 (30++ reviews)</div>
               </div>
               <a href={`tel:${phoneNumber}`} className="call-button">
                 <FontAwesomeIcon icon={faPhone} /> Call {phoneNumber}
@@ -151,7 +151,7 @@ function FloodContent() {
             </>
           ) : (
             <div className="out-of-service">
-              Unfortunately, we don't service your area. Call us to get referred to a mitigation partner.
+              Unfortunately, we don't service {city}, {state} yet. Call us to get referred to a mitigation partner.
             </div>
           )
         ) : error ? (
