@@ -139,7 +139,7 @@ function FloodContent() {
             <>
               <div className="location-info">
                 <h3>Your Location: {city}, {state}</h3>
-                <p>Your Restoration Experts Are {Math.round(distance * 1.25)} minutes Away</p>
+                <p>Your Restoration Experts Are {Math.round(distance * 1.25)} minutes away</p>
               </div>
               <div className="service-rating">
                 <p>24/7 Emergency Service</p>
