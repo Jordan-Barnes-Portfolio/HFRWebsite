@@ -9,15 +9,57 @@
   }
   
   .flood-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .header-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .logo {
+    margin-bottom: 10px;
   }
   
   .logo img {
-    max-width: 125px;
+    max-width: 200px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .contact-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #00a0e3;
+  }
+  
+  .contact-info h2 {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .phone-number {
+    font-size: 18px;
+    color: #ff7f00;
+    text-decoration: none;
+    display: block;
+    text-align: center;
   }
   
   .help-banner {
@@ -27,7 +69,6 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     width: 100%;
-    margin: 10px 0;
   }
   
   .help-banner h2 {
@@ -43,28 +84,6 @@
   
   .time-options .now {
     color: #ff7f00;
-  }
-  
-  .contact-info {
-    text-align: right;
-  }
-  
-  .contact-info p {
-    margin: 0;
-    font-size: 14px;
-    color: #00a0e3;
-  }
-  
-  .contact-info h2 {
-    margin: 5px 0;
-    font-size: 16px;
-    color: #333;
-  }
-  
-  .phone-number {
-    font-size: 18px;
-    color: #ff7f00;
-    text-decoration: none;
   }
   
   .main-content {
@@ -212,12 +231,46 @@
   
   @media screen and (min-width: 768px) {
     .flood-header {
-      flex-wrap: nowrap;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .header-top {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 0;
+    }
+  
+    .logo {
+      margin-bottom: 0;
+      flex: 1;
+    }
+  
+    .logo img {
+      margin: 0;
+    }
+  
+    .contact-info {
+      align-items: flex-end;
+      text-align: right;
+      flex: 1;
+    }
+  
+    .contact-info h2,
+    .phone-number {
+      text-align: right;
     }
   
     .help-banner {
       width: auto;
-      margin: 0;
+      margin: 0 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
   
     .content-flex {
