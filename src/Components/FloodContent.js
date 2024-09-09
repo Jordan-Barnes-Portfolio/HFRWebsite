@@ -82,61 +82,58 @@ function FloodContent() {
 
 
   return (
-      <div className="flood-content">
-        <header className="flood-header">
-          <div className="logo">    
-            <img src={logo} alt="Heartland Restoration Logo" />
-          </div>
-          <div className="help-banner">
-            <h2>I Need Help!</h2>
-            <div className="time-options">
-              <span className="now">Now</span> | <span>Today</span> | <span>Soon</span>
-            </div>
-          </div>
-          <div className="contact-info">
-            <p>We're Standing By 24/7</p>
-            <h2>Call Our Claims Specialist</h2>
-            <a href={`tel:${phoneNumber}`} className="phone-number">
-              <FontAwesomeIcon icon={faPhone} /> Call {phoneNumber}
-            </a>
-          </div>
-        </header>
-  
-        <main className="main-content">
-          <h1>Water Damage Cleanup and Restoration</h1>
-          <div className="content-flex">
-            <div className="text-content">
-              <p>
-                Heartland Restoration® is a name you can trust when you need water damage restoration, cleanup, and repair, near you. Who you choose will have a major impact on not only how well your home is cared for but whether or not your insurance rates will rise, or even be canceled. Trust our claims specialist to help you navigate your claim with our "Heartland Loss Prevention" mobile app.
-              </p>
-              <a href={`tel:${phoneNumber}`} className="phone-number">
-              <FontAwesomeIcon icon={faPhone} /> Call now: {phoneNumber}
-            </a>
-            </div>
-            <div className="image-content">
-              <img src={waterDamageImage} alt="Water Damage in Living Room" />
-            </div>
-          </div>
-        </main>
-  
-        <div className="resources-section">
-          <div className="mascot">
-            <img src={mascot} alt="Heartland Restoration Mascot" />
-          </div>
-          <div className="resto-resources-card">
-            <a href="https://www.heartlandrestoration.net/restoration-resources">
-            <h3>Resto-Resources</h3>
-            </a>
-            
-            <ul>
-              <li>What Insurance Expects You To Do</li>
-              <li>What To Do While You Wait</li>
-              <li>Our Process</li>
-            </ul>
+    <div className="flood-content">
+      <header className="flood-header">
+        <div className="logo">    
+          <img src={logo} alt="Heartland Restoration Logo" />
+        </div>
+        <div className="help-banner">
+          <h2>I Need Help!</h2>
+          <div className="time-options">
+            <span className="now">Now</span> | <span>Today</span> | <span>Soon</span>
           </div>
         </div>
-  
-        <div className="location-banner">
+        <div className="contact-info">
+          <p>We're Standing By 24/7</p>
+          <h2>Call Our Claims Specialist</h2>
+          <a href={`tel:${phoneNumber}`} className="phone-number">
+            <FontAwesomeIcon icon={faPhone} /> {phoneNumber}
+          </a>
+        </div>
+      </header>
+
+      <main className="main-content">
+        <h1>Water Damage Cleanup and Restoration</h1>
+        <div className="content-flex">
+          <div className="text-content">
+            <p>
+              Heartland Restoration® is a name you can trust when you need water damage restoration, cleanup, and repair, near you. Who you choose will have a major impact on not only how well your home is cared for but whether or not your insurance rates will rise, or even be canceled. Trust our claims specialist to help you navigate your claim with our "Heartland Loss Prevention" mobile app.
+            </p>
+            <p className="call-now">
+              Call Now: {phoneNumber}
+            </p>
+          </div>
+          <div className="image-content">
+            <img src={waterDamageImage} alt="Water Damage in Living Room" />
+          </div>
+        </div>
+      </main>
+
+      <div className="resources-section">
+        <div className="mascot">
+          <img src={mascot} alt="Heartland Restoration Mascot" />
+        </div>
+        <div className="resto-resources-card">
+          <h3>Resto-Resources</h3>
+          <ul>
+            <li>What Insurance Expects You To Do</li>
+            <li>What To Do While You Wait</li>
+            <li>Our Process</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="location-banner">
         {distance !== null ? (
           distance <= 40 ? (
             <>
@@ -146,15 +143,15 @@ function FloodContent() {
               </div>
               <div className="service-rating">
                 <p>24/7 Emergency Service</p>
-                <div className="stars">★★★★★ 5.0 (20++ reviews)</div>
+                <div className="stars">★★★★★ 4.8 (257 reviews)</div>
               </div>
               <a href={`tel:${phoneNumber}`} className="call-button">
-                Call {phoneNumber}
+                <FontAwesomeIcon icon={faPhone} /> Call {phoneNumber}
               </a>
             </>
           ) : (
             <div className="out-of-service">
-              Unfortunately, we don't service {city}, {state} yet. Call us to get referred to a mitigation partner.
+              Unfortunately, we don't service your area. Call us to get referred to a mitigation partner.
             </div>
           )
         ) : error ? (
@@ -164,7 +161,7 @@ function FloodContent() {
         )}
       </div>
     </div>
-    );
+  );
   }
 
 export default FloodContent;
