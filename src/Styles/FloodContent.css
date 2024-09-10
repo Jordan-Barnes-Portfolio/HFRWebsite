@@ -281,6 +281,41 @@
     border: 1px solid #ccc;
     border-radius: 4px;
   }
+
+  .date-picker-container {
+    margin-bottom: 15px;
+  }
+  
+  .date-picker-container label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .custom-datepicker-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* Prevent zoom on iOS */
+    cursor: pointer;
+  }
+  
+  /* Increase touch target size for mobile */
+  @media (max-width: 768px) {
+    .custom-datepicker-input {
+      padding: 15px 10px;
+    }
+  
+    .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item {
+      padding: 10px 5px;
+      height: auto;
+    }
+  }
+  
+  /* Ensure the date picker dropdown is fully visible */
+  .react-datepicker-popper {
+    z-index: 9999 !important;
+  }
   
   @keyframes pulse {
     0% {

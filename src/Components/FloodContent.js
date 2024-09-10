@@ -94,6 +94,17 @@ function FloodContent() {
       }
     };
 
+    // Custom input component for DatePicker
+    const CustomInput = React.forwardRef(({ value, onClick }, ref) => (
+      <input
+        className="custom-datepicker-input"
+        onClick={onClick}
+        ref={ref}
+        value={value}
+        readOnly
+      />
+    ));
+
     return (
       <div className="modal-overlay" onClick={closeModal}>
         <div className="modal" onClick={(e) => e.stopPropagation()}>
@@ -136,6 +147,7 @@ function FloodContent() {
                 timeIntervals={15}
                 timeCaption="Time"
                 dateFormat="MMMM d, yyyy h:mm aa"
+                customInput={<CustomInput />}
               />
             </div>
             {localSubmitError && <p className="error-message">{localSubmitError}</p>}
