@@ -198,8 +198,8 @@ function FloodContent() {
         <div className="help-banner">
           <h2>I Need Help!</h2>
           <div className="time-options">
-          <FontAwesomeIcon icon={faPhone} /><a href={`tel:${phoneNumber}`} className="now"> Now </a> | 
-            <a href="#" onClick={(e) => { e.preventDefault(); openModal("Today"); }}> Schedule </a><FontAwesomeIcon icon={faCalendarAlt} />
+          <FontAwesomeIcon color="#ff7f00" icon={faPhone} /><a href={`tel:${phoneNumber}`} className="now">   Now </a> | <FontAwesomeIcon color="#00a0e3" icon={faCalendarAlt} />
+            <a href="#" onClick={(e) => { e.preventDefault(); openModal("Today"); }}>   Schedule </a>
           </div>
         </div>
         <div className="contact-info">
