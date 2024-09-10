@@ -185,7 +185,7 @@
   }
   
   .call-now {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
     color: #ff7f00;
   }
@@ -308,7 +308,7 @@
     text-decoration: none;
     border-radius: 4px;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 20px;
     width: 100%;
     text-align: center;
   }
