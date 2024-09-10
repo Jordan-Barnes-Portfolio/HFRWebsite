@@ -89,7 +89,7 @@ function FloodContent() {
           <button className="close-modal" onClick={closeModal}>
             <FontAwesomeIcon icon={faTimes} />
           </button>
-          <h2>Request {modalType} Call</h2>
+          <h2>Request a call</h2>
           <form onSubmit={handleLocalSubmit}>
             <input
               type="text"
@@ -198,9 +198,9 @@ function FloodContent() {
         <div className="help-banner">
           <h2>I Need Help!</h2>
           <div className="time-options">
-            <a href="#" onClick={(e) => { e.preventDefault(); openModal("Immediate"); }} className="now">Now</a> | 
+            <a href={`tel:${phoneNumber}`} className="now">Now</a> | 
             <a href="#" onClick={(e) => { e.preventDefault(); openModal("Today"); }}> Today</a> | 
-            <a href={`tel:${phoneNumber}`}> Soon</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); openModal("Immediate"); }}> Soon</a>
           </div>
         </div>
         <div className="contact-info">
