@@ -6,6 +6,9 @@ import waterDamageImage from "../Assets/dryer-hardwood-image.jpg";
 import logo from "../Assets/HR_Stacked-Logo.png";
 import mascot from "../Assets/HR_Hydro-Man.jpg";
 import emailjs from "@emailjs/browser";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 
 function FloodContent() {
   const [userLocation, setUserLocation] = useState(null);
@@ -35,6 +38,7 @@ function FloodContent() {
       name: "",
       phone: "",
       email: "",
+      preferredDateTime: new Date(),
     });
     const [localSubmitError, setLocalSubmitError] = useState("");
     const [localIsSubmitting, setLocalIsSubmitting] = useState(false);
@@ -44,6 +48,13 @@ function FloodContent() {
       setFormData(prevData => ({
         ...prevData,
         [name]: value
+      }));
+    };
+
+    const handleDateChange = (date) => {
+      setFormData(prevData => ({
+        ...prevData,
+        preferredDateTime: date
       }));
     };
       
@@ -89,7 +100,7 @@ function FloodContent() {
           <button className="close-modal" onClick={closeModal}>
             <FontAwesomeIcon icon={faTimes} />
           </button>
-          <h2>Request a call</h2>
+          <h2>Request {modalType} Call</h2>
           <form onSubmit={handleLocalSubmit}>
             <input
               type="text"
@@ -114,6 +125,19 @@ function FloodContent() {
               value={formData.email}
               onChange={handleInputChange}
             />
+            <div className="date-picker-container">
+              <label htmlFor="preferredDateTime">Preferred Date/Time:</label>
+              <DatePicker
+                id="preferredDateTime"
+                selected={formData.preferredDateTime}
+                onChange={handleDateChange}
+                showTimeSelect
+                timeFormat="h:mm aa"
+                timeIntervals={15}
+                timeCaption="Time"
+                dateFormat="MMMM d, yyyy h:mm aa"
+              />
+            </div>
             {localSubmitError && <p className="error-message">{localSubmitError}</p>}
             <button type="submit" disabled={localIsSubmitting}>
               {localIsSubmitting ? 'Submitting...' : 'Submit'}
@@ -123,6 +147,7 @@ function FloodContent() {
       </div>
     );
   };
+
 
 
   useEffect(() => {

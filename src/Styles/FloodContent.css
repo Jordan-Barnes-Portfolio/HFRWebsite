@@ -261,6 +261,26 @@
     color: #ff7f00;
     animation: pulse 2s infinite;
   }
+
+  .date-picker-container {
+    margin-bottom: 15px;
+  }
+  
+  .date-picker-container label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .react-datepicker-wrapper {
+    width: 100%;
+  }
+  
+  .react-datepicker__input-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
   
   @keyframes pulse {
     0% {
