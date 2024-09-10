@@ -269,7 +269,7 @@ function FloodContent() {
 
       <div className="location-banner">
         {distance !== null ? (
-          distance <= 4500 ? (
+          distance <= 45 ? (
             <>
               <div className="location-info">
                 <h3>Your Location: {city}, {state}</h3>
