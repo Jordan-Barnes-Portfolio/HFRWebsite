@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faTimes, faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
 import "../Styles/FloodContent.css";
 import waterDamageImage from "../Assets/dryer-hardwood-image.jpg";
 import logo from "../Assets/HR_Stacked-Logo.png";
@@ -198,9 +198,8 @@ function FloodContent() {
         <div className="help-banner">
           <h2>I Need Help!</h2>
           <div className="time-options">
-            <a href={`tel:${phoneNumber}`} className="now">Now</a> | 
-            <a href="#" onClick={(e) => { e.preventDefault(); openModal("Today"); }}> Today</a> | 
-            <a href="#" onClick={(e) => { e.preventDefault(); openModal("Immediate"); }}> Soon</a>
+          <FontAwesomeIcon icon={faPhone} /><a href={`tel:${phoneNumber}`} className="now"> Now </a> | 
+            <a href="#" onClick={(e) => { e.preventDefault(); openModal("Today"); }}> Schedule </a><FontAwesomeIcon icon={faCalendarAlt} />
           </div>
         </div>
         <div className="contact-info">
