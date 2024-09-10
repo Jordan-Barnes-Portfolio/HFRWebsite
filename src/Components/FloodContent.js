@@ -203,7 +203,7 @@ function FloodContent() {
           </div>
         </div>
         <div className="contact-info">
-          <h2 style={{color: "cadetblue"}}>We're Standing By 24/7</h2>
+          <h2 style={{color: "#00a0e3"}}>We're Standing By 24/7</h2>
           <h2>Call Our Claims Specialist</h2>
           <a href={`tel:${phoneNumber}`} className="phone-number">
             <FontAwesomeIcon icon={faPhone} /> {phoneNumber}
