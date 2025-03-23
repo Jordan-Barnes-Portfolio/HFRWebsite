@@ -22,27 +22,24 @@ function Info() {
 
       <div className="info-cards-content">
         <InformationCard
-          title="Emergency Service"
-          description="Our Emergency Service is designed to be your reliable support
-            in critical situations. Whether it's a sudden pipe burst, flood, or
-            any concern that requires immediate attention, our team of
-            dedicated professionals is available 24/7 to provide
-            prompt and efficient help."
+          title="Emergency Service Available"
+          description="We're available 24/7! The damage to your home or business does not stop at 5pm local time! We're available at a moments notice.
+          Call us and expect us to arrive promptly and ready to swing into action on your water damage! "
           icon={faHourglass}
         />
 
         <InformationCard
           title="Book an appointment"
-          description="Our values are Trust, Partnership & Excellence. We pride ourselves on our transparency and ability to handle emergency situations. We lead you through the entire process and provide you a mobile app that allows you oversee and have control over the entire process. Trust is our number one value and that means we handle the entire loss, work with insurance & put you back on track."
+          description="Our values are Trust, Partnership & Excellence. We pride ourselves on our transparency and ability to handle emergency situations. 
+          We lead you through the entire process and provide you a mobile app that allows you oversee and have control over the entire process. 
+          Trust is our number one value and that means we handle the entire loss, work with insurance & put you back on track."
           icon={faBook}
         />
 
         <InformationCard
           title="Insurance"
-          description="Be confident! Our services cater to all your
-            insurance needs. Our skilled appraisers provide support
-            with your insurance agency to ensure you arent paying anything
-            extra out of pocket."
+          description="Insurance policies are difficult to read on the best day. Coverage can be denied for a single word. Let us help you understand your
+          situation and guide you through the claim process. Often we're able to avoid claims and keep you whole!"
           icon={faIndustry}
         />
       </div>

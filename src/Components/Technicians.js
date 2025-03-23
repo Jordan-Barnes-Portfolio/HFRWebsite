@@ -4,6 +4,7 @@ import "../Styles/Technicians.css";
 import billy from "../Assets/billy.png";
 import joshua from "../Assets/joshua.png";
 import kaleb from "../Assets/kaleb.png";
+import { flippedCards } from '../Pages/HeartlandConcierge';
 
 function Technicians() {
   return (

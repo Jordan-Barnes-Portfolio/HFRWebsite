@@ -17,9 +17,8 @@ function About() {
           <span>About Us</span>
         </h3>
         <p className="about-description">
-          Welcome to Heartland Restoration, your trusted partner for accessible and
-          personalized flood and mold restoration services. Our expert technicians offer online consultations
-          and specialized services, prioritizing you!
+          Heartalnd is built on family values, trust is our number one value. From the first call to the last broom sweep into a dustpan, our goal 
+          is 100% satisfaction. Our family was built on truth & respect. Let us help you in your time of need!
         </p>
 
         <h4 className="about-text-title">Your Solutions</h4>

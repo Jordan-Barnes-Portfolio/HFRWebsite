@@ -53,7 +53,8 @@ function Hero() {
           }
         </div>
           <div className="text-section" >
-            <p className="text-headline">Need immediate flood or mold services?</p>
+            <p className="text-headline">We're On Standby 24/7 Ready To Take On Your Most Difficult Home Restoration Challenge</p>
+            
             <h2 className="text-title" style={{width: "100%"}}>
               Click "Emergency Service" below or call us and we will come right away!
             </h2>
