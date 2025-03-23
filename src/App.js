@@ -7,7 +7,7 @@ import NotFound from "./Pages/NotFound";
 import Appointment from "./Pages/Appointment";
 import AddReview from "./Pages/AddReview";
 import Projects from "./Pages/Projects";
-import RestorationResources from "./Pages/RestorationResources";
+import HeartlandConcierge from "./Pages/HeartlandConcierge";
 import Flood from "./Pages/Flood";
 import { inject } from "@vercel/analytics";
 
@@ -23,7 +23,7 @@ function App() {
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/createreview" element={<AddReview />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/restoration-resources" element={<RestorationResources />} />
+          <Route path="/concierge-contractor" element={<HeartlandConcierge />} />
           <Route path="/flood" element={<Flood />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -29,7 +29,7 @@ function Navbar() {
           <li><a href="#reviews" className="navbar-links">Reviews</a></li>
           <li><a href="#Technicians" className="navbar-links">Technicians</a></li>
           <li><Link to="/appointment" className="navbar-links">Appointment</Link></li>
-          <li><Link to="/restoration-resources" className="navbar-links">Restoration Resources</Link></li>
+          <li><Link to="/concierge-contractor" className="navbar-links">Concierge Contractor</Link></li>
           <li><a href="https://www.google.com/maps/place//data=!4m3!3m2!1s0x67bbabee79e27d99:0x619c3c1752aca767!12e1?source=g.page.m.ia._&laa=nmx-review-solicitation-ia2" className="navbar-links">Leave a Review</a></li>
         </ul>
       )}
@@ -47,7 +47,7 @@ function Navbar() {
               <li><a onClick={openNav} href="#reviews">Reviews</a></li>
               <li><a onClick={openNav} href="#Technicians">Technicians</a></li>
               <li><Link onClick={openNav} to="/appointment">Appointment</Link></li>
-              <li><Link onClick={openNav} to="/restoration-resources">Restoration Resources</Link></li>
+              <li><Link onClick={openNav} to="/restoration-resources">Concierge Contractor</Link></li>
               <li><a onClick={openNav} href="https://www.google.com/maps/place//data=!4m3!3m2!1s0x67bbabee79e27d99:0x619c3c1752aca767!12e1?source=g.page.m.ia._&laa=nmx-review-solicitation-ia2">Leave a Review</a></li>
             </ul>
           </div>
