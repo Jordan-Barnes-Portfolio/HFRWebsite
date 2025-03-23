@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
 import HeartlandConciergeNavbar from "../Components/HeartlandConciergeNavBar";
-// Fix 1: Check if these image paths are correct
 import Partner1 from "../Assets/ccPartners1.png";
 import Partner2 from "../Assets/ccPartners2.png";
 import Partner3 from "../Assets/ccPartners3.png";
