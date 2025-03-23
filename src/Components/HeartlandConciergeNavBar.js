@@ -23,7 +23,7 @@ function HeartlandConciergeNavbar() {
 
         .heartland-navbar-wrapper :global(.nav-link),
         .heartland-navbar-wrapper :global(a) {
-          color: rgb(207, 14, 104) !important;
+          color: rgb(255, 255, 255) !important;
           font-weight: bold;
           padding: 5px 10px;
           border: 2px solid transparent;
