@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import HeartlandConciergeNavbar from '../Components/HeartlandConciergeNavBar';
 
-
-
 // HeartlandConcierge component that contains all sections
 const HeartlandConcierge = () => {
+  // Add state to track which cards are flipped
+  const [flippedCards, setFlippedCards] = useState({});
+
+  // Toggle flip state for a specific card
+  const toggleCardFlip = (index) => {
+    setFlippedCards(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
+  
   // Feature cards data
   const features = [
     {
@@ -23,7 +33,7 @@ const HeartlandConcierge = () => {
     },
     {
       title: "All Trades Under One Roof",
-      description: "Water damage often requires multiple specialists. Our network includes every necessary trade, coordinated seamlessly to provide comprehensive restoration solutions."
+      description: "Routine maintenance or castostrophic loss requires coordination; that's what we provide. Our network includes every necessary trade, coordinated seamlessly to provide comprehensive restoration solutions."
     }
   ];
 
@@ -54,29 +64,29 @@ const HeartlandConcierge = () => {
   // Insurance benefits data
   const insuranceBenefits = [
     {
-      title: "Prevent Unnecessary Claims",
+      title: "☣ Prevent Unnecessary Claims",
       description: "Our expert assessment helps determine when a claim is truly needed, protecting your clients' claim history and your loss ratios."
     },
     {
-      title: "Real-Time Oversight",
+      title: "⏱ Real-Time Oversight",
       description: "Access our platform to monitor progress, review documentation, and stay informed without constant phone calls."
     },
     {
-      title: "Client Satisfaction",
+      title: "👍🏻 Client Satisfaction",
       description: "Provide your clients with reliable, quality restoration services that reflect positively on your recommendation."
     }
   ];
 
   return (
     <div className="heartland-concierge">
-       <HeartlandConciergeNavbar />
+      <HeartlandConciergeNavbar />
       {/* CSS styles */}
       <style jsx>{`
         :root {
           --primary: #1e5c97;
           --secondary: #e8f1f9;
           --accent: #f59e0b;
-          --dark: #2c3e50;z
+          --dark: #2c3e50;
           --light: #f8fafc;
         }
         
@@ -155,20 +165,63 @@ const HeartlandConcierge = () => {
           gap: 2rem;
         }
         
+        /* Feature card flip styles */
+        .feature-card-container {
+          perspective: 1000px;
+          height: 280px; /* Set a fixed height for the container */
+        }
+        
         .feature-card {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          transition: transform 0.6s;
+          transform-style: preserve-3d;
+          cursor: pointer;
+        }
+        
+        .feature-card.flipped {
+          transform: rotateY(180deg);
+        }
+        
+        .feature-card-front, .feature-card-back {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
           background-color: white;
           border-radius: 8px;
           padding: 2rem;
           box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+          
+        }
+        .feature-card-back p {
+          text-align:center;
+          }
+        
+        .feature-card-front {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
           text-align: center;
-          transition: transform 0.3s;
         }
         
-        .feature-card:hover {
-          transform: translateY(-5px);
+        .feature-card-back {
+          transform: rotateY(180deg);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          text-align: left;
+          overflow-y: auto;
         }
         
-        .feature-card h3 {
+        .feature-card-back h3 {
+          text-align: center;
+          margin-bottom: 1rem;
+          color: var(--primary);
+        }
+        
+        .feature-card-front h3, .feature-card-back h3 {
           margin-bottom: 1rem;
           color: var(--primary);
         }
@@ -291,24 +344,42 @@ const HeartlandConcierge = () => {
         <div className="container">
           <h1>CONCIERGE CONTRACTOR</h1>
           <p>
-            <div style={{fontSize: '24px',fontWeight:'bold',  textDecoration:'underline',color:'#f7941d',}}> Kansas City's Premier Concierge Trade-Services Alliance</div>Connecting insurance agents, HOAs, property managers, 
-            and commercial entities with trusted, hometown experts while providing unmatched transparency and oversight.</p>
+            <div style={{fontSize: '24px', fontWeight:'bold', textDecoration:'underline', color:'#f7941d'}}>Kansas City's Premier Concierge Trade-Services Alliance</div>
+            Connecting insurance agents, HOAs, property managers, 
+            and commercial entities with trusted, hometown experts while providing unmatched transparency and oversight.
+          </p>
           <a href="#contact" className="btn">Get Started Today</a>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Features Section - with flip functionality */}
       <section className="features" id="features">
         <div className="container">
           <div className="section-title">
             <h2>Why Choose Our Concierge Program</h2>
             <p>We bring value through transparency, expertise, and accountability</p>
+            <p><small>(Click cards to learn more)</small></p>
           </div>
           <div className="feature-grid">
             {features.map((feature, index) => (
-              <div className="feature-card" key={index}>
-                <h3>{feature.title}</h3>
-                <p>{feature.description}</p>
+              <div className="feature-card-container" key={index}>
+                <div 
+                  className={`feature-card ${flippedCards[index] ? 'flipped' : ''}`}
+                  onClick={() => toggleCardFlip(index)}
+                >
+                  <div className="feature-card-front">
+                    <h3>{feature.title}</h3>
+                    
+                    <span style={{ fontSize: '14px', color: '#666', marginTop:'15px' }}>Click to flip</span>
+                  </div>
+                  <div className="feature-card-back">
+                    <h3>{feature.title}</h3>
+                    <p>{feature.description}</p>
+                    <div style={{ marginTop: '20px', textAlign: 'center' }}>
+                      <span style={{ fontSize: '14px', color: '#666' }}>Click to flip back</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -338,7 +409,7 @@ const HeartlandConcierge = () => {
       <section className="insurance-partners">
         <div className="container">
           <div className="section-title">
-            <h2>For Insurance Agents & Commercial Partners</h2>
+            <h2>For Insurance Agents & Maintenance Departments</h2>
             <p>We help you deliver exceptional client experiences while reducing unnecessary claims</p>
           </div>
           <div className="feature-grid">
@@ -369,7 +440,6 @@ const HeartlandConcierge = () => {
               />
             ))}
           </div>
-          
         </div>
       </section>
 
@@ -381,6 +451,8 @@ const HeartlandConcierge = () => {
           <a href="tel:+9132893104" className="btn">Contact Us Today</a>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 };

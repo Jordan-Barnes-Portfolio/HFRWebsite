@@ -15,6 +15,52 @@ function Navbar() {
 
   return (
     <div className="navbar-section">
+      <style jsx>{`
+        /* Styling for navbar links */
+        .navbar-links {
+          color:rgb(255, 255, 255)   !important;
+          font-weight: bold;
+          padding: 5px 10px;
+          border: 2px solid transparent;
+          border-radius: 4px;
+          transition: all 0.3s ease;
+        }
+
+        .navbar-links:hover {
+          color: #f7941d !important;
+          border-color: white !important;
+          background-color: rgb(255, 255, 255);
+        }
+
+        .navbar-links:active {
+          color: #d17c19 !important;
+          background-color: rgb(255, 255, 255);
+          transform: scale(0.98);
+        }
+
+        /* Mobile navbar link styling */
+        .mobile-navbar-links li a {
+          color:rgb(5, 43, 78) !important;
+          font-weight: bold;
+          padding: 5px 10px;
+          border: 2px solid transparent;
+          border-radius: 4px;
+          transition: all 0.3s ease;
+        }
+
+        .mobile-navbar-links li a:hover {
+          color:rgb(138, 78, 5) !important;
+          border-color: white !important;
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-navbar-links li a:active {
+          color: #d17c19 !important;
+          background-color: rgba(255, 255, 255);
+          transform: scale(0.98);
+        }
+      `}</style>
+
       <h1 className="navbar-title">
         <Link to="/">
           {isMobile ? "Heartland" : "Heartland Restoration"}

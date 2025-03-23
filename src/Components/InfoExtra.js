@@ -32,11 +32,12 @@ function Info() {
                         <span>Why Choose Heartland Restoration</span>
                         </h3>
                         <p className="ba-description">
-                            Our team of experienced technicians and flood experts use will 
-                            come at your convenience to assess your home and design personalized 
-                            plans to attack the problem. From comprehensive investigations to 
-                            advanced flood and mold care, we are committed to helping you maintain 
-                            a safe home.
+                            Heartland is family-owned & locally operated company. We treat your home & business like it is our own. Our technicians
+                            will arrive in a uniform and ready to help. The problems you're experiencing, we're going to solve. Overflows, floods, back-up
+                            broken pipes, leaks, sewage & mold is our specialty. The best part of our service is that you don't pay until you're absolutely
+                            satisfied.
+
+                            
                         </p>
         
                         <p className="ba-checks ba-check-first">

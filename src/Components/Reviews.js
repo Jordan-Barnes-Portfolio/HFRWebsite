@@ -34,7 +34,7 @@ function Reviews() {
     <div className="review-section" id="reviews">
       <div className="rw-text-content">
 
-        <p className="rw-text-desc">Don't believe us, Check out  what clients have said</p>
+        <p className="rw-text-desc">Our Customers Have Said...</p>
 
         <p className="rw-text-format">
           <span className="rw-text-quote1">''</span>

@@ -23,12 +23,26 @@ function HeartlandConciergeNavbar() {
 
         .heartland-navbar-wrapper :global(.nav-link),
         .heartland-navbar-wrapper :global(a) {
-          color: #1e5c97 !important;
+          color: rgb(207, 14, 104) !important;
           font-weight: bold;
+          padding: 5px 10px;
+          border: 2px solid transparent;
+          border-radius: 4px;
+          transition: all 0.3s ease;
         }
 
-        .heartland-navbar-wrapper :global(.navbar-brand) {
-          color: #1e5c97 !important;
+        .heartland-navbar-wrapper :global(.nav-link:hover),
+        .heartland-navbar-wrapper :global(a:hover) {
+          color: #f7941d !important;
+          border-color: white !important;
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .heartland-navbar-wrapper :global(.nav-link:active),
+        .heartland-navbar-wrapper :global(a:active) {
+          color: #d17c19 !important;
+          background-color: rgba(255, 255, 255, 0.2);
+          transform: scale(0.98);
         }
 
         .heartland-navbar-wrapper :global(.navbar-section .navbar-title),
@@ -39,7 +53,7 @@ function HeartlandConciergeNavbar() {
           :global(div.navbar-section)
           :global(div.navbar-title),
         .heartland-navbar-wrapper :global(.navbar-title) {
-          color:rgb(255, 255, 255) !important;
+          color: rgb(255, 255, 255) !important;
         }
 
         /* Target the text elements directly */
@@ -47,7 +61,7 @@ function HeartlandConciergeNavbar() {
         .heartland-navbar-wrapper :global(.navbar-title p),
         .heartland-navbar-wrapper :global(.navbar-title span),
         .heartland-navbar-wrapper :global(.navbar-title div) {
-          color:rgb(255, 255, 255) !important;
+          color: rgb(255, 255, 255) !important;
         }
       `}</style>
       <Navbar />
