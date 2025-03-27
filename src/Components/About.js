@@ -17,7 +17,7 @@ function About() {
           <span>About Us</span>
         </h3>
         <p className="about-description">
-          Heartalnd is built on family values, trust is our number one value. From the first call to the last broom sweep into a dustpan, our goal 
+          Heartland is built on family values, trust is our number one value. From the first call to the last broom sweep into a dustpan, our goal 
           is 100% satisfaction. Our family was built on truth & respect. Let us help you in your time of need!
         </p>
 
