@@ -7,7 +7,7 @@ import kaleb from "../Assets/kaleb.jpg";
 import sonya from "../Assets/sonya.png";
 import chase from "../Assets/chase.png";
 import allen from "../Assets/allen.png";
-import lael from "../Assets/lael.png";
+import lael from "../Assets/lael.jpg";
 import { flippedCards } from '../Pages/HeartlandConcierge';
 
 function Technicians() {
