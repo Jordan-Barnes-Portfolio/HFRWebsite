@@ -2,8 +2,12 @@ import React from "react";
 import TechCard from "./TechCard";
 import "../Styles/Technicians.css";
 import billy from "../Assets/billy.png";
-import joshua from "../Assets/joshua.png";
-import kaleb from "../Assets/kaleb.png";
+import joshua from "../Assets/joshua.jpg";
+import kaleb from "../Assets/kaleb.jpg";
+import sonya from "../Assets/sonya.png";
+import chase from "../Assets/chase.png";
+import allen from "../Assets/allen.png";
+import lael from "../Assets/lael.jpg";
 import { flippedCards } from '../Pages/HeartlandConcierge';
 
 function Technicians() {
@@ -25,17 +29,38 @@ function Technicians() {
         <TechCard
           img={joshua}
           name="Joshua Barnes"
-          title="General Manager"
+          title="CEO"
         />
-        <TechCard
+          <TechCard
+          img={sonya}
+          name="Sonya Barnes"
+          title="CFO"
+        />
+          <TechCard
+          img={kaleb}
+          name="Kaleb Barnes"
+          title="Lead Technician"
+        />
+          <TechCard
           img={billy}
           name="Billy Graham"
           title="Technician"
         />
-        <TechCard
-          img={kaleb}
-          name="Kaleb Barnes"
+          <TechCard
+          img={chase}
+          name="Chase Nelson"
           title="Technician"
+        />
+
+        <TechCard
+          img={allen}
+          name="Allen Barnes"
+          title="Developer"
+        />
+        <TechCard
+          img={lael}
+          name="Lael"
+          title="Marketing / Social Media"
         />
       </div>
     </div>
