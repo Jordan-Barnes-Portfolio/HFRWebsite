@@ -120,10 +120,16 @@ function FloodContent() {
         
         await emailjs.send(
           "service_oqq2gx9",
-          "template_e8vd6de",
+          "template_45q2x0c",
           {
             name: formData.name,
             message: message,
+            to_name: "Heartland Restoration",
+            email: formData.email || "No email provided",
+            phone: formData.phone,
+            issue: formData.issue,
+            urgency: formData.urgency,
+            preferred_time: formData.preferredDateTime.toLocaleString()
           },
           "JMBl585lEMg3cdw0Z"
         );
