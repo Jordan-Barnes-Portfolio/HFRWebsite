@@ -155,9 +155,12 @@ function FloodContent() {
         <div className="logo">
           <img src={logo} alt="Heartland Restoration Logo" />
         </div>
-        <div className="emergency-banner">
-          <div className="emergency-pulse"></div>
-          <h2>24/7 EMERGENCY RESPONSE</h2>
+        <div className="contact-info">
+          <h2>Water Damage? Mold Problem?</h2>
+          <h3>Get Help in Minutes, Not Hours</h3>
+          <a href={`tel:${phoneNumber}`} className="phone-number">
+            <FontAwesomeIcon icon={faPhone} /> {phoneNumber}
+          </a>
         </div>
       </header>
 
