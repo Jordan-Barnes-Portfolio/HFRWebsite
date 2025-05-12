@@ -1,9 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faClock, faShieldAlt, faHome, faCheck, faTimes, faStar, faUser, faEnvelope, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import "../Styles/FloodContent.css";
 import logo from "../Assets/HR_Stacked-Logo.png";
+import fbIcon from "../Assets/fb.png";
+import googlerevIcon from "../Assets/googlerev.png";
+import iircIcon from "../Assets/iirc.png";
+import instagramIcon from "../Assets/instagram.png";
 import emailjs from "@emailjs/browser";
 import stateFarmLogo from "../Assets/State_Farm_logo.svg";
 import farmersLogo from "../Assets/farmers-insurance-3.svg";
@@ -14,7 +18,6 @@ import ccPartners1 from "../Assets/ccPartners1.png";
 import ccPartners2 from "../Assets/ccPartners2.png";
 import ccPartners3 from "../Assets/ccPartners3.png";
 import ccPartners4 from "../Assets/ccPartners4.png";
-import ccPartners5 from "../Assets/ccPartners5.png";
 import { useNavigate } from "react-router-dom";
 
 function FloodContent() {
@@ -288,7 +291,7 @@ function FloodContent() {
           <img src={logo} alt="Heartland Restoration Logo" />
         </div>
         <div className="contact-info">
-          <h2>Water Damage? Need Help Today?</h2>
+          <h2 className="centered-header">Water Damage? Need Help Today?</h2>
           <h3>Get Help in Minutes, Not Hours</h3>
           <a href={`tel:${phoneNumber}`} className="phone-number" onClick={trackPhoneCall}>
             <FontAwesomeIcon icon={faPhone} /> {phoneNumber}
@@ -336,6 +339,12 @@ function FloodContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9 }}
           >
+            <div className="accreditation-icons">
+              <img src={iircIcon} alt="IIRC Certified" className="accreditation-icon" />
+              <img src={googlerevIcon} alt="Google Verified" className="accreditation-icon" />
+              <img src={fbIcon} alt="Facebook Verified" className="accreditation-icon" />
+            </div>
+            <div className="trust-badge-divider"></div>
             <div className="trust-badge-item">
               <img src="https://www.gstatic.com/images/icons/material/system/1x/verified_user_grey600_48dp.png" alt="Licensed & Insured" className="trust-badge" />
               <span>Licensed & Insured</span>
