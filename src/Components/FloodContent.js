@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faClock, faShieldAlt, faHome, faCheck, faTimes, faStar, faUser, faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -19,6 +19,8 @@ import ccPartners5 from "../Assets/ccPartners5.png";
 function FloodContent() {
   const [showModal, setShowModal] = useState(false);
   const [hasShownFirstModal, setHasShownFirstModal] = useState(false);
+  const [hasShownSecondModal, setHasShownSecondModal] = useState(false);
+  const secondModalTimerRef = useRef(null);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -29,7 +31,7 @@ function FloodContent() {
   const [showSuccess, setShowSuccess] = useState(false);
   const phoneNumber = "913-289-3104";
 
-  // Show modal after 20 seconds
+  // Show first modal after 20 seconds
   useEffect(() => {
     if (!hasShownFirstModal) {
       const timer = setTimeout(() => {
@@ -40,13 +42,37 @@ function FloodContent() {
     }
   }, [hasShownFirstModal]);
 
-  // Exit intent detection
+  // Set up second modal timer when first modal closes
+  useEffect(() => {
+    if (hasShownFirstModal && !showModal && !hasShownSecondModal) {
+      secondModalTimerRef.current = setTimeout(() => {
+        setShowModal(true);
+        setHasShownSecondModal(true);
+      }, 40000);
+      
+      return () => {
+        if (secondModalTimerRef.current) {
+          clearTimeout(secondModalTimerRef.current);
+        }
+      };
+    }
+  }, [hasShownFirstModal, showModal, hasShownSecondModal]);
+
+  // Clear second modal timer if user submits form in first modal
+  useEffect(() => {
+    if (showSuccess && secondModalTimerRef.current) {
+      clearTimeout(secondModalTimerRef.current);
+    }
+  }, [showSuccess]);
+
+  // Exit intent detection - only after both scheduled modals have shown
   useEffect(() => {
     const handleMouseLeave = (e) => {
       if (
         e.clientY <= 0 &&
         !showModal &&
         hasShownFirstModal &&
+        hasShownSecondModal &&
         !localStorage.getItem('exitModalShown')
       ) {
         setShowModal(true);
@@ -56,7 +82,7 @@ function FloodContent() {
 
     document.addEventListener('mouseleave', handleMouseLeave);
     return () => document.removeEventListener('mouseleave', handleMouseLeave);
-  }, [showModal, hasShownFirstModal]);
+  }, [showModal, hasShownFirstModal, hasShownSecondModal]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
