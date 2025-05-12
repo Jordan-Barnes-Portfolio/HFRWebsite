@@ -74,12 +74,12 @@ function Hero() {
                 </button>
               </div>
               <div style={{margin: "5px"}}>
-                <a href="tel:9132893104" onClick={handleCall}>
+                <a href="tel:9132133686" onClick={handleCall}>
                   <button
                     className="text-appointment-btn"
                     type="button"
                   >
-                    <FontAwesomeIcon icon={faPhone} /> Call: 913 289 3104
+                    <FontAwesomeIcon icon={faPhone} /> Call: 913 213 3686
                   </button>
                 </a>
               </div>

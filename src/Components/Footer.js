@@ -72,7 +72,7 @@ function Footer() {
               </a>
             </li>
             <li>
-              <a href="tel:+913 289 3104">Call: 913 289 3104</a>
+              <a href="tel:+913 213 3686">Call: 913 213 3686</a>
             </li>
           </ul>
         </div>
