@@ -35,7 +35,7 @@ function FloodContent() {
       const timer = setTimeout(() => {
         setShowModal(true);
         setHasShownFirstModal(true);
-      }, 10000);
+      }, 20000);
       return () => clearTimeout(timer);
     }
   }, [hasShownFirstModal]);
