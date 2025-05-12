@@ -9,6 +9,8 @@ import AddReview from "./Pages/AddReview";
 import Projects from "./Pages/Projects";
 import HeartlandConcierge from "./Pages/HeartlandConcierge";
 import Flood from "./Pages/Flood";
+import PrivacyPolicy from "./Pages/PrivacyPolicy";
+import ThankYou from "./Pages/ThankYou";
 import { inject } from "@vercel/analytics";
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/concierge-contractor" element={<HeartlandConcierge />} />
           <Route path="/flood" element={<Flood />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/thank-you" element={<ThankYou />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>

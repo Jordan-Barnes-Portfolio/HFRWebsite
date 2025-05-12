@@ -1,0 +1,188 @@
+.thankyou-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.thankyou-content {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  padding: 40px;
+  text-align: center;
+}
+
+.thankyou-content .logo {
+  margin-bottom: 30px;
+}
+
+.thankyou-content .logo img {
+  max-width: 180px;
+  margin: 0 auto;
+}
+
+.success-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.success-icon-container {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(76, 175, 80, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.success-icon {
+  font-size: 4rem;
+  color: #4CAF50;
+}
+
+.success-message h1 {
+  font-size: 2.5rem;
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.message-lead {
+  font-size: 1.4rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.success-message p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.immediate-help {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f0f7fa 0%, #ffe8d6 100%);
+  width: 100%;
+  max-width: 500px;
+}
+
+.immediate-help h2 {
+  font-size: 1.6rem;
+  color: #00263e;
+  margin-bottom: 15px;
+}
+
+.call-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(45deg, #ff7f00, #ff9f33);
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 14px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(255, 127, 0, 0.4);
+  margin-top: 10px;
+}
+
+.call-button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(255, 127, 0, 0.5);
+}
+
+.navigation-options {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.back-link, .home-link {
+  color: #00a0e3;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.back-link:hover, .home-link:hover {
+  color: #0078a8;
+}
+
+@media (max-width: 768px) {
+  .thankyou-content {
+    padding: 30px 20px;
+  }
+  
+  .success-message h1 {
+    font-size: 2rem;
+  }
+  
+  .message-lead {
+    font-size: 1.2rem;
+  }
+  
+  .immediate-help h2 {
+    font-size: 1.4rem;
+  }
+  
+  .call-button {
+    font-size: 1.1rem;
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .thankyou-container {
+    padding: 20px 15px;
+  }
+  
+  .thankyou-content {
+    padding: 25px 15px;
+  }
+  
+  .success-icon-container {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .success-icon {
+    font-size: 3rem;
+  }
+  
+  .success-message h1 {
+    font-size: 1.8rem;
+  }
+  
+  .message-lead {
+    font-size: 1.1rem;
+  }
+  
+  .immediate-help {
+    padding: 15px;
+  }
+  
+  .immediate-help h2 {
+    font-size: 1.3rem;
+  }
+} 

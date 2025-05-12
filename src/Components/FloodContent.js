@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faClock, faShieldAlt, faHome, faCheck, faTimes, faStar, faUser, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faClock, faShieldAlt, faHome, faCheck, faTimes, faStar, faUser, faEnvelope, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import "../Styles/FloodContent.css";
 import logo from "../Assets/HR_Stacked-Logo.png";
 import emailjs from "@emailjs/browser";
@@ -15,8 +15,10 @@ import ccPartners2 from "../Assets/ccPartners2.png";
 import ccPartners3 from "../Assets/ccPartners3.png";
 import ccPartners4 from "../Assets/ccPartners4.png";
 import ccPartners5 from "../Assets/ccPartners5.png";
+import { useNavigate } from "react-router-dom";
 
 function FloodContent() {
+  const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
   const [hasShownFirstModal, setHasShownFirstModal] = useState(false);
   const [hasShownSecondModal, setHasShownSecondModal] = useState(false);
@@ -30,6 +32,18 @@ function FloodContent() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const phoneNumber = "913-213-3686";
+  const address = "Kansas City, MO 64111";
+
+  // Track phone number clicks for conversion
+  const trackPhoneCall = () => {
+    if (window.gtag) {
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-1032093322/SBE_CMybz8YaEIr9kewD',
+        'value': 1.0,
+        'currency': 'USD'
+      });
+    }
+  };
 
   // Show first modal after 20 seconds
   useEffect(() => {
@@ -114,10 +128,22 @@ function FloodContent() {
       // Update state with submitted data
       setFormData(submittedData);
       setShowSuccess(true);
+      
+      // Track form submission as conversion
+      if (window.gtag) {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-1032093322/SBE_CMybz8YaEIr9kewD',
+          'value': 1.0,
+          'currency': 'USD'
+        });
+      }
+      
+      // Redirect to thank you page after a brief delay
       setTimeout(() => {
         setShowModal(false);
         setShowSuccess(false);
-      }, 3000);
+        navigate('/thank-you');
+      }, 1500);
     } catch (error) {
       console.error('Error:', error);
     } finally {
@@ -188,14 +214,14 @@ function FloodContent() {
               <h2>Thank You!</h2>
               <p>We'll contact you right away.</p>
               <p>For immediate assistance, call:</p>
-              <a href={`tel:${phoneNumber}`} className="success-phone">
+              <a href={`tel:${phoneNumber}`} className="success-phone" onClick={trackPhoneCall}>
                 <FontAwesomeIcon icon={faPhone} /> {phoneNumber}
               </a>
             </div>
           ) : (
             <>
               <h2>Get Emergency Help Now</h2>
-              <p className="modal-subtitle">Fast response for water damage emergencies</p>
+              <p className="modal-subtitle">Fast response for water damage emergency service in Kansas City and Johnson County</p>
               <form id="emergencyForm" onSubmit={handleSubmit} autoComplete="on">
                 <div className="form-group">
                   <FontAwesomeIcon icon={faUser} className="input-icon" />
@@ -244,7 +270,7 @@ function FloodContent() {
                 <span>OR</span>
               </div>
               <div className="modal-cta">
-                <a href={`tel:${phoneNumber}`} className="modal-phone">
+                <a href={`tel:${phoneNumber}`} className="modal-phone" onClick={trackPhoneCall}>
                   <FontAwesomeIcon icon={faPhone} className="phone-icon" /> Call {phoneNumber}
                 </a>
               </div>
@@ -262,9 +288,9 @@ function FloodContent() {
           <img src={logo} alt="Heartland Restoration Logo" />
         </div>
         <div className="contact-info">
-          <h2>Water Damage? Mold Problem?</h2>
+          <h2>Water Damage? Need Help Today?</h2>
           <h3>Get Help in Minutes, Not Hours</h3>
-          <a href={`tel:${phoneNumber}`} className="phone-number">
+          <a href={`tel:${phoneNumber}`} className="phone-number" onClick={trackPhoneCall}>
             <FontAwesomeIcon icon={faPhone} /> {phoneNumber}
           </a>
         </div>
@@ -274,7 +300,7 @@ function FloodContent() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="hero-section enhanced-hero"
+        className="hero-section enhanced-hero shorter-hero"
       >
         <div className="hero-overlay">
           <h1>
@@ -301,7 +327,7 @@ function FloodContent() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
           >
-            Professional Water Damage & Flood Restoration Services
+            Professional Water Damage & Flood Restoration Services in Kansas City
           </motion.h2>
           
           <motion.div 
@@ -331,6 +357,7 @@ function FloodContent() {
               className="cta-button call-now"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={trackPhoneCall}
             >
               <FontAwesomeIcon icon={faPhone} /> Call {phoneNumber}
             </motion.a>
@@ -397,25 +424,6 @@ function FloodContent() {
             </div>
           </div>
         </div>
-        
-        {/* Partners Section */}
-        <div className="sub-section partners-subsection">
-          <h3>We Partner With...</h3>
-          <div className="partners-logos">
-            <div className="partner-logo">
-              <img src={ccPartners1} alt="Partner 1" />
-            </div>
-            <div className="partner-logo">
-              <img src={ccPartners2} alt="Partner 2" />
-            </div>
-            <div className="partner-logo">
-              <img src={ccPartners3} alt="Partner 3" />
-            </div>
-            <div className="partner-logo">
-              <img src={ccPartners4} alt="Partner 4" />
-            </div>
-          </div>
-        </div>
       </motion.div>
 
       <motion.div 
@@ -469,12 +477,58 @@ function FloodContent() {
               className="cta-button call-now"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={trackPhoneCall}
             >
               <FontAwesomeIcon icon={faPhone} /> Call {phoneNumber}
             </motion.a>
           </motion.div>
+          <div className="main-website-link">
+            <a href="/">Go to main website</a>
+          </div>
         </div>
       </motion.div>
+
+      {/* Partners Section moved to bottom */}
+      <motion.div 
+        className="sub-section partners-subsection"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
+        <h3>We Partner With...</h3>
+        <div className="partners-logos">
+          <div className="partner-logo">
+            <img src={ccPartners1} alt="Partner 1" />
+          </div>
+          <div className="partner-logo">
+            <img src={ccPartners2} alt="Partner 2" />
+          </div>
+          <div className="partner-logo">
+            <img src={ccPartners3} alt="Partner 3" />
+          </div>
+          <div className="partner-logo">
+            <img src={ccPartners4} alt="Partner 4" />
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Added Footer */}
+      <footer className="flood-footer">
+        <div className="footer-content">
+          <div className="footer-info">
+            <h3>Serving Kansas City</h3>
+            <p>
+              <FontAwesomeIcon icon={faMapMarkerAlt} /> {address}
+            </p>
+            <p>
+              <FontAwesomeIcon icon={faPhone} /> {phoneNumber}
+            </p>
+          </div>
+          <div className="footer-links">
+            <a href="/privacy-policy">Privacy Policy</a>
+          </div>
+        </div>
+      </footer>
 
       <Modal />
     </div>

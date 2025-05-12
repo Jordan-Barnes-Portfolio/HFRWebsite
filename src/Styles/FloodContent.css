@@ -212,6 +212,12 @@ button {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
+/* Shorter hero section */
+.shorter-hero {
+  height: 50vh;
+  min-height: 350px;
+}
+
 .enhanced-hero:before {
   content: '';
   position: absolute;
@@ -718,62 +724,68 @@ button {
   }
 }
 
-/* Footer */
-.footer {
-  margin-top: 40px;
-  padding: 30px 0;
-  background-color: #333;
+/* Footer Styles */
+.flood-footer {
+  margin-top: 50px;
+  padding: 30px 20px;
+  background-color: #00263e;
   color: white;
-  border-radius: 8px 8px 0 0;
+  border-radius: 8px;
 }
 
 .footer-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  padding: 0 20px;
-}
-
-.footer-info {
   text-align: center;
 }
 
+.footer-info {
+  margin-bottom: 20px;
+}
+
 .footer-info h3 {
-  color: white;
+  color: #fff;
+  font-size: 1.2rem;
   margin-bottom: 10px;
 }
 
 .footer-info p {
-  color: #ccc;
   margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
-.footer-contact {
-  text-align: center;
+.footer-info svg {
+  color: #ff7f00;
 }
 
-.footer-phone {
-  color: white;
-  font-size: 1.3rem;
-  font-weight: 700;
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #ff7f00;
-  border-radius: 4px;
-  margin-top: 10px;
+.footer-links a {
+  color: #ff7f00;
+  text-decoration: underline;
+  transition: color 0.3s;
 }
 
-.footer-bottom {
-  text-align: center;
-  padding-top: 20px;
-  margin-top: 20px;
-  border-top: 1px solid #555;
+.footer-links a:hover {
+  color: #fff;
 }
 
-.footer-bottom p {
-  color: #999;
-  font-size: 0.9rem;
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+  
+  .footer-info {
+    margin-bottom: 0;
+  }
+  
+  .footer-info p {
+    justify-content: flex-start;
+  }
 }
 
 /* Location Banner */
@@ -1973,4 +1985,21 @@ button {
   .input-icon {
     left: 12px;
   }
+}
+
+/* Main website link */
+.main-website-link {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.main-website-link a {
+  color: #00a0e3;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.main-website-link a:hover {
+  color: #0078a8;
 }
