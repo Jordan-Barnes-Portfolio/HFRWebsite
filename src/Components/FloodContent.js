@@ -1,10 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faClock, faShieldAlt, faHome, faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faClock, faShieldAlt, faHome, faCheck, faTimes, faStar, faUser, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import "../Styles/FloodContent.css";
 import logo from "../Assets/HR_Stacked-Logo.png";
 import emailjs from "@emailjs/browser";
+import stateFarmLogo from "../Assets/State_Farm_logo.svg";
+import farmersLogo from "../Assets/farmers-insurance-3.svg";
+import allstateLogo from "../Assets/allstate.svg";
+import nationwideLogo from "../Assets/nationwide-insurance.svg";
+import libertyMutualLogo from "../Assets/liberty-mutual.svg";
+import ccPartners1 from "../Assets/ccPartners1.png";
+import ccPartners2 from "../Assets/ccPartners2.png";
+import ccPartners3 from "../Assets/ccPartners3.png";
+import ccPartners4 from "../Assets/ccPartners4.png";
+import ccPartners5 from "../Assets/ccPartners5.png";
 
 function FloodContent() {
   const [showModal, setShowModal] = useState(false);
@@ -19,13 +29,13 @@ function FloodContent() {
   const [showSuccess, setShowSuccess] = useState(false);
   const phoneNumber = "913-289-3104";
 
-  // Show modal after 30 seconds
+  // Show modal after 20 seconds
   useEffect(() => {
     if (!hasShownFirstModal) {
       const timer = setTimeout(() => {
         setShowModal(true);
         setHasShownFirstModal(true);
-      }, 30000);
+      }, 10000);
       return () => clearTimeout(timer);
     }
   }, [hasShownFirstModal]);
@@ -52,20 +62,31 @@ function FloodContent() {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Get values directly from form
+    const formElements = e.target.elements;
+    const submittedData = {
+      name: formElements.name.value,
+      phone: formElements.phone.value,
+      email: formElements.email.value || '',
+      message: formElements.message.value || ''
+    };
+
     try {
       await emailjs.send(
         "service_oqq2gx9",
         "template_45q2x0c",
         {
-          name: formData.name,
-          message: `Phone: ${formData.phone}\nEmail: ${formData.email}\nMessage: ${formData.message}`,
+          name: submittedData.name,
+          message: `Phone: ${submittedData.phone}\nEmail: ${submittedData.email}\nMessage: ${submittedData.message}`,
           to_name: "Heartland Restoration",
-          email: formData.email || "No email provided",
-          phone: formData.phone
+          email: submittedData.email || "No email provided",
+          phone: submittedData.phone
         },
         "JMBl585lEMg3cdw0Z"
       );
 
+      // Update state with submitted data
+      setFormData(submittedData);
       setShowSuccess(true);
       setTimeout(() => {
         setShowModal(false);
@@ -78,76 +99,135 @@ function FloodContent() {
     }
   };
 
-  const Modal = () => (
-    <AnimatePresence>
-      {showModal && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="modal-overlay"
-          onClick={() => setShowModal(false)}
+  // Handle all form input changes with a single function
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  // Handle form autofill detection
+  useEffect(() => {
+    if (showModal) {
+      // Brief delay to allow autofill to complete
+      const autofillTimer = setTimeout(() => {
+        const form = document.getElementById('emergencyForm');
+        if (form) {
+          // Check for autofilled inputs
+          const inputs = form.querySelectorAll('input, textarea');
+          let updatedData = {...formData};
+          let hasAutofilled = false;
+          
+          inputs.forEach(input => {
+            // Check if browser has autofilled this input
+            const isAutofilled = input.matches(':-webkit-autofill') || 
+                               (window.getComputedStyle(input, null).getPropertyValue('background-color') !== 'rgb(255, 255, 255)');
+            
+            if (isAutofilled && input.value && input.name) {
+              updatedData[input.name] = input.value;
+              hasAutofilled = true;
+            }
+          });
+          
+          if (hasAutofilled) {
+            setFormData(updatedData);
+          }
+        }
+      }, 100);
+      
+      return () => clearTimeout(autofillTimer);
+    }
+  }, [showModal]);
+
+  const Modal = () => {
+    if (!showModal) return null;
+    
+    return (
+      <div className="modal-overlay" onClick={() => setShowModal(false)}>
+        <div 
+          className="enhanced-modal"
+          onClick={e => e.stopPropagation()}
         >
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 50, opacity: 0 }}
-            className="modal"
-            onClick={e => e.stopPropagation()}
-          >
+          <div className="modal-header">
             <button className="close-modal" onClick={() => setShowModal(false)}>
               <FontAwesomeIcon icon={faTimes} />
             </button>
+          </div>
 
-            {showSuccess ? (
-              <div className="success-message">
-                <h2>Thank You!</h2>
-                <p>We'll contact you right away.</p>
-                <p>For immediate assistance, call {phoneNumber}</p>
-              </div>
-            ) : (
-              <>
-                <h2>Get Emergency Help Now</h2>
-                <form onSubmit={handleSubmit}>
+          {showSuccess ? (
+            <div className="success-message">
+              <FontAwesomeIcon icon={faCheck} className="success-icon" />
+              <h2>Thank You!</h2>
+              <p>We'll contact you right away.</p>
+              <p>For immediate assistance, call:</p>
+              <a href={`tel:${phoneNumber}`} className="success-phone">
+                <FontAwesomeIcon icon={faPhone} /> {phoneNumber}
+              </a>
+            </div>
+          ) : (
+            <>
+              <h2>Get Emergency Help Now</h2>
+              <p className="modal-subtitle">Fast response for water damage emergencies</p>
+              <form id="emergencyForm" onSubmit={handleSubmit} autoComplete="on">
+                <div className="form-group">
+                  <FontAwesomeIcon icon={faUser} className="input-icon" />
                   <input
                     type="text"
+                    name="name"
                     placeholder="Your Name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    defaultValue={formData.name}
                     required
                   />
+                </div>
+                <div className="form-group">
+                  <FontAwesomeIcon icon={faPhone} className="input-icon" />
                   <input
                     type="tel"
+                    name="phone"
                     placeholder="Phone Number"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                    defaultValue={formData.phone}
                     required
                   />
+                </div>
+                <div className="form-group">
+                  <FontAwesomeIcon icon={faEnvelope} className="input-icon" />
                   <input
                     type="email"
+                    name="email"
                     placeholder="Email (optional)"
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    defaultValue={formData.email}
                   />
-                  <textarea
-                    placeholder="Tell us about your emergency"
-                    value={formData.message}
-                    onChange={(e) => setFormData({...formData, message: e.target.value})}
-                  />
-                  <button type="submit" disabled={isSubmitting}>
-                    {isSubmitting ? 'Sending...' : 'Get Help Now'}
-                  </button>
-                </form>
-                <div className="form-footer">
-                  <p>OR CALL NOW: <a href={`tel:${phoneNumber}`}>{phoneNumber}</a></p>
                 </div>
-              </>
-            )}
-          </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
+                <div className="form-group">
+                  <textarea
+                    name="message"
+                    placeholder="Tell us about your emergency"
+                    defaultValue={formData.message}
+                  />
+                </div>
+                <button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending...' : 'Get Help Now'}
+                </button>
+              </form>
+              <div className="form-divider">
+                <span>OR</span>
+              </div>
+              <div className="modal-cta">
+                <a href={`tel:${phoneNumber}`} className="modal-phone">
+                  <FontAwesomeIcon icon={faPhone} className="phone-icon" /> Call {phoneNumber}
+                </a>
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="flood-content">
@@ -168,7 +248,7 @@ function FloodContent() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="hero-section"
+        className="hero-section enhanced-hero"
       >
         <div className="hero-overlay">
           <h1>
@@ -181,29 +261,66 @@ function FloodContent() {
               Emergency Water Damage?
             </motion.span>
             <br />
-            We'll Be There in 30 Minutes
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="highlight-text-alt"
+            >
+              We'll Be There in 30 Minutes
+            </motion.span>
           </h1>
-          <h2>Professional Water Damage & Flood Restoration Services</h2>
-          
-          <motion.div 
-            className="cta-buttons"
+          <motion.h2
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
+            transition={{ delay: 0.7 }}
           >
-            <a href={`tel:${phoneNumber}`} className="cta-button call-now">
+            Professional Water Damage & Flood Restoration Services
+          </motion.h2>
+          
+          <motion.div 
+            className="trust-badges"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9 }}
+          >
+            <div className="trust-badge-item">
+              <img src="https://www.gstatic.com/images/icons/material/system/1x/verified_user_grey600_48dp.png" alt="Licensed & Insured" className="trust-badge" />
+              <span>Licensed & Insured</span>
+            </div>
+            <div className="trust-badge-item">
+              <img src="https://www.gstatic.com/images/icons/material/system/1x/star_grey600_48dp.png" alt="5-Star Google Reviews" className="trust-badge" />
+              <span className="google-reviews-badge">★★★★★ 5/5 on Google</span>
+            </div>
+          </motion.div>
+          
+          <motion.div 
+            className="cta-buttons prominent-cta"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1.1, type: "spring", stiffness: 200 }}
+          >
+            <motion.a 
+              href={`tel:${phoneNumber}`} 
+              className="cta-button call-now"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <FontAwesomeIcon icon={faPhone} /> Call {phoneNumber}
-            </a>
+            </motion.a>
           </motion.div>
         </div>
       </motion.div>
 
       <motion.div 
-        className="benefits-section"
+        className="combined-benefits-section"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
+        <h2 className="main-benefits-header">Why Choose Us?</h2>
+        
+        {/* Core Benefits */}
         <div className="benefits-grid">
           <div className="benefit-card">
             <FontAwesomeIcon icon={faClock} className="benefit-icon" />
@@ -220,34 +337,117 @@ function FloodContent() {
             <h3>Full Service</h3>
             <p>From emergency response to complete restoration</p>
           </div>
+          <div className="benefit-card">
+            <FontAwesomeIcon icon={faStar} className="benefit-icon" />
+            <h3>5 Star Rated on Google</h3>
+            <p className="star-rating">
+              <FontAwesomeIcon icon={faStar} className="star-icon" />
+              <FontAwesomeIcon icon={faStar} className="star-icon" />
+              <FontAwesomeIcon icon={faStar} className="star-icon" />
+              <FontAwesomeIcon icon={faStar} className="star-icon" />
+              <FontAwesomeIcon icon={faStar} className="star-icon" />
+            </p>
+          </div>
+        </div>
+        
+        {/* Insurance Section */}
+        <div className="sub-section insurance-subsection">
+          <h3>We Take All Insurance</h3>
+          <div className="insurance-logos">
+            <div className="insurance-logo">
+              <img src={stateFarmLogo} alt="State Farm" />
+            </div>
+            <div className="insurance-logo">
+              <img src={farmersLogo} alt="Farmers Insurance" />
+            </div>
+            <div className="insurance-logo">
+              <img src={allstateLogo} alt="Allstate" />
+            </div>
+            <div className="insurance-logo">
+              <img src={nationwideLogo} alt="Nationwide" />
+            </div>
+            <div className="insurance-logo">
+              <img src={libertyMutualLogo} alt="Liberty Mutual" />
+            </div>
+          </div>
+        </div>
+        
+        {/* Partners Section */}
+        <div className="sub-section partners-subsection">
+          <h3>We Partner With...</h3>
+          <div className="partners-logos">
+            <div className="partner-logo">
+              <img src={ccPartners1} alt="Partner 1" />
+            </div>
+            <div className="partner-logo">
+              <img src={ccPartners2} alt="Partner 2" />
+            </div>
+            <div className="partner-logo">
+              <img src={ccPartners3} alt="Partner 3" />
+            </div>
+            <div className="partner-logo">
+              <img src={ccPartners4} alt="Partner 4" />
+            </div>
+          </div>
         </div>
       </motion.div>
 
       <motion.div 
-        className="emergency-tips"
+        className="testimonials-section"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
-        <h3>While You Wait: Emergency Tips</h3>
-        <ul>
-          <li><FontAwesomeIcon icon={faCheck} /> Turn off the main water supply</li>
-          <li><FontAwesomeIcon icon={faCheck} /> Remove valuable items from wet areas</li>
-          <li><FontAwesomeIcon icon={faCheck} /> Take photos for insurance documentation</li>
-          <li><FontAwesomeIcon icon={faCheck} /> Do not use electrical appliances in wet areas</li>
-        </ul>
+        <h2>What Our Customers Say</h2>
+        <div className="testimonials-grid">
+          <div className="testimonial-card">
+            <div className="stars">★★★★★</div>
+            <div className="testimonial-text">"Heartland Restoration was at my house in 20 minutes and saved my basement! Highly recommend."</div>
+            <div className="testimonial-author">- Sarah M.</div>
+          </div>
+          <div className="testimonial-card">
+            <div className="stars">★★★★★</div>
+            <div className="testimonial-text">"They handled everything with my insurance and made a stressful situation easy."</div>
+            <div className="testimonial-author">- John D.</div>
+          </div>
+          <div className="testimonial-card">
+            <div className="stars">★★★★★</div>
+            <div className="testimonial-text">"Professional, fast, and friendly. My home looks better than before!"</div>
+            <div className="testimonial-author">- Lisa T.</div>
+          </div>
+        </div>
       </motion.div>
 
       <motion.div 
-        className="final-cta"
+        className="combined-emergency-section"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
-        <h2>Don't Wait - Water Damage Gets Worse Every Minute!</h2>
-        <a href={`tel:${phoneNumber}`} className="cta-button call-now">
-          <FontAwesomeIcon icon={faPhone} /> Call {phoneNumber} Now
-        </a>
+        <h2>While You Wait: Emergency Tips</h2>
+        
+        <div className="emergency-tips-content">
+          <ul>
+            <li><FontAwesomeIcon icon={faCheck} /> Turn off the main water supply</li>
+            <li><FontAwesomeIcon icon={faCheck} /> Remove valuable items from wet areas</li>
+            <li><FontAwesomeIcon icon={faCheck} /> Take photos for insurance documentation</li>
+            <li><FontAwesomeIcon icon={faCheck} /> Do not use electrical appliances in wet areas</li>
+          </ul>
+        </div>
+        
+        <div className="emergency-cta">
+          <h3>Don't Wait - Water Damage Gets Worse Every Minute!</h3>
+          <motion.div className="cta-buttons prominent-cta">
+            <motion.a 
+              href={`tel:${phoneNumber}`} 
+              className="cta-button call-now"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <FontAwesomeIcon icon={faPhone} /> Call {phoneNumber}
+            </motion.a>
+          </motion.div>
+        </div>
       </motion.div>
 
       <Modal />
