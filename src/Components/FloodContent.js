@@ -34,6 +34,7 @@ function FloodContent() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
   const phoneNumber = "913-213-3686";
   const address = "Kansas City, MO 64111";
 
@@ -47,6 +48,50 @@ function FloodContent() {
       });
     }
   };
+
+  // Setup reCAPTCHA v3
+  useEffect(() => {
+    const loadRecaptcha = () => {
+      console.log("Attempting to load reCAPTCHA...");
+      
+      // First approach - Using grecaptcha.ready
+      if (window.grecaptcha && window.grecaptcha.ready) {
+        console.log("grecaptcha.ready is available");
+        try {
+          window.grecaptcha.ready(() => {
+            console.log("reCAPTCHA is ready");
+            setRecaptchaLoaded(true);
+          });
+        } catch (error) {
+          console.error("Error in grecaptcha.ready:", error);
+          // If ready method fails, we'll try the fallback
+        }
+      } 
+      // Second approach - Direct check
+      else if (window.grecaptcha && window.grecaptcha.execute) {
+        console.log("grecaptcha.execute is available directly");
+        setRecaptchaLoaded(true);
+      }
+      // Not loaded yet
+      else {
+        console.log("reCAPTCHA not yet available");
+      }
+    };
+    
+    // Try loading immediately
+    loadRecaptcha();
+    
+    // Set up polling as a fallback
+    const checkRecaptchaLoaded = setInterval(() => {
+      if (!recaptchaLoaded) {
+        loadRecaptcha();
+      } else {
+        clearInterval(checkRecaptchaLoaded);
+      }
+    }, 500);
+    
+    return () => clearInterval(checkRecaptchaLoaded);
+  }, [recaptchaLoaded]);
 
   // Show first modal after 20 seconds
   useEffect(() => {
@@ -104,30 +149,58 @@ function FloodContent() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    // Get values directly from form
-    const formElements = e.target.elements;
-    const submittedData = {
-      name: formElements.name.value,
-      phone: formElements.phone.value,
-      email: formElements.email.value || '',
-      message: formElements.message.value || ''
-    };
+    console.log("Form submission started");
 
     try {
+      // Get values directly from form
+      const formElements = e.target.elements;
+      const submittedData = {
+        name: formElements.name.value,
+        phone: formElements.phone.value,
+        email: formElements.email.value || '',
+        message: formElements.message.value || ''
+      };
+      
+      console.log("Form data collected");
+
+      // Prepare basic payload
+      const emailPayload = {
+        name: submittedData.name,
+        message: `Phone: ${submittedData.phone}\nEmail: ${submittedData.email}\nMessage: ${submittedData.message}`,
+        to_name: "Heartland Restoration",
+        email: submittedData.email || "No email provided",
+        phone: submittedData.phone
+      };
+
+      // Try to get reCAPTCHA token but don't block submission if it fails
+      try {
+        if (recaptchaLoaded && window.grecaptcha && window.grecaptcha.execute) {
+          console.log("Attempting to execute reCAPTCHA...");
+          const token = await window.grecaptcha.execute('6LcSbjorAAAAAOFWl5gFtjcZCjB14RlmwHQGjEL8', {action: 'submit'});
+          if (token) {
+            console.log("reCAPTCHA token obtained");
+            emailPayload['g-recaptcha-response'] = token;
+          }
+        } else {
+          console.log("reCAPTCHA not available, proceeding without verification");
+        }
+      } catch (recaptchaError) {
+        console.error("reCAPTCHA execution failed:", recaptchaError);
+        // Continue without reCAPTCHA
+      }
+
+      console.log("Sending email with payload:", Object.keys(emailPayload));
+      
+      // Send the form
       await emailjs.send(
         "service_oqq2gx9",
         "template_45q2x0c",
-        {
-          name: submittedData.name,
-          message: `Phone: ${submittedData.phone}\nEmail: ${submittedData.email}\nMessage: ${submittedData.message}`,
-          to_name: "Heartland Restoration",
-          email: submittedData.email || "No email provided",
-          phone: submittedData.phone
-        },
+        emailPayload,
         "JMBl585lEMg3cdw0Z"
       );
 
+      console.log("Email sent successfully");
+      
       // Update state with submitted data
       setFormData(submittedData);
       setShowSuccess(true);
@@ -148,7 +221,8 @@ function FloodContent() {
         navigate('/thank-you');
       }, 1500);
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Form submission error:', error);
+      alert("There was an error submitting the form. Please try again or call us directly.");
     } finally {
       setIsSubmitting(false);
     }
@@ -261,6 +335,9 @@ function FloodContent() {
                     placeholder="Tell us about your emergency"
                     defaultValue={formData.message}
                   />
+                </div>
+                <div className="recaptcha-notice">
+                  This site is protected by reCAPTCHA.
                 </div>
                 <button 
                   type="submit" 

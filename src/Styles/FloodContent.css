@@ -2196,3 +2196,11 @@ button {
     height: 30px;
   }
 }
+
+.recaptcha-notice {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 0.8rem;
+  color: #666;
+  font-style: italic;
+}
