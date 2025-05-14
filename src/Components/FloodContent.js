@@ -166,7 +166,7 @@ function FloodContent() {
       // Prepare basic payload
       const emailPayload = {
         name: submittedData.name,
-        message: `Phone: ${submittedData.phone}\nEmail: ${submittedData.email}\nMessage: ${submittedData.message}`,
+        message: `Message: ${submittedData.message}`,
         to_name: "Heartland Restoration",
         email: submittedData.email || "No email provided",
         phone: submittedData.phone
