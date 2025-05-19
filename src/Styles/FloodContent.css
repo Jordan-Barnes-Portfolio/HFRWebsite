@@ -2204,3 +2204,99 @@ button {
   color: #666;
   font-style: italic;
 }
+
+/* Call Action Section */
+.call-action-section {
+  background: linear-gradient(135deg, #f0f7fa 0%, #e6f0ff 100%);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,160,227,0.07);
+  padding: 40px 30px;
+  margin: 40px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.call-action-section:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #ff7f00, #ff9f33);
+  border-radius: 8px 8px 0 0;
+}
+
+.call-action-section h2 {
+  color: #0077b6;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.call-action-section p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 25px;
+  font-size: 1.2rem;
+}
+
+.call-cta {
+  margin: 20px auto;
+  max-width: 300px;
+}
+
+.call-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #ff7f00, #ff9f33);
+  color: white;
+  font-weight: 700;
+  width: 100%;
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(255, 127, 0, 0.3);
+  transition: all 0.3s ease;
+  gap: 10px;
+}
+
+.call-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 127, 0, 0.4);
+}
+
+.phone-icon {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .call-action-section {
+    padding: 30px 20px;
+  }
+  
+  .call-action-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .call-action-section p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .call-action-section {
+    padding: 25px 15px;
+  }
+  
+  .call-action-section h2 {
+    font-size: 1.6rem;
+  }
+  
+  .call-action-section p {
+    font-size: 1rem;
+  }
+}
