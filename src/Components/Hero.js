@@ -47,9 +47,39 @@ function Hero() {
 
   return (
       <div className="hero-section" style={{margin: "10px;"}}>
-        <div style={{position: "fixed",  zIndex: "-1", maxWidth: "100%", height: "auto", backgroundSize: "cover"}}>
+        <div style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: -1,
+          overflow: "hidden"
+        }}>
           {
-            isMobile ? <img src={hero_bg} alt="hero-bg" /> : <video autoPlay muted loop><source src={hero_bg} type="video/mp4"/></video>
+            isMobile ? 
+              <img 
+                src={hero_bg} 
+                alt="hero-bg" 
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover"
+                }}
+              /> 
+              : 
+              <video 
+                autoPlay 
+                muted 
+                loop 
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover"
+                }}
+              >
+                <source src={hero_bg} type="video/mp4"/>
+              </video>
           }
         </div>
           <div className="text-section" >
@@ -63,26 +93,37 @@ function Hero() {
               one us within minutes. On-demand restoration
               services at your fingertips.
             </p>
-            <div style={{display: "-webkit-flex"}}>
-              <div style={{margin: "5px"}}>
+            <div style={{
+              display: "flex",
+              flexDirection: isMobile ? "column" : "row",
+              gap: "10px",
+              justifyContent: "center",
+              alignItems: "center",
+              width: "100%"
+            }}>
+              <button
+                className="text-appointment-btn"
+                type="button"
+                onClick={handleBookAppointmentClick}
+                style={{
+                  width: isMobile ? "100%" : "auto",
+                  minWidth: "200px"
+                }}
+              >
+                <FontAwesomeIcon icon={faCalendarCheck} /> Schedule emergency service
+              </button>
+              <a href="tel:9132133686" onClick={handleCall} style={{width: isMobile ? "100%" : "auto"}}>
                 <button
                   className="text-appointment-btn"
                   type="button"
-                  onClick={handleBookAppointmentClick}
+                  style={{
+                    width: isMobile ? "100%" : "auto",
+                    minWidth: "200px"
+                  }}
                 >
-                <FontAwesomeIcon icon={faCalendarCheck} /> Schedule emergency service
+                  <FontAwesomeIcon icon={faPhone} /> Call: 913 213 3686
                 </button>
-              </div>
-              <div style={{margin: "5px"}}>
-                <a href="tel:9132133686" onClick={handleCall}>
-                  <button
-                    className="text-appointment-btn"
-                    type="button"
-                  >
-                    <FontAwesomeIcon icon={faPhone} /> Call: 913 213 3686
-                  </button>
-                </a>
-              </div>
+              </a>
             </div>
         </div>
         <div className="hero-logo">

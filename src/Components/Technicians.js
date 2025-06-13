@@ -51,12 +51,6 @@ function Technicians() {
           name="Chase Nelson"
           title="Technician"
         />
-
-        <TechCard
-          img={allen}
-          name="Allen Barnes"
-          title="Developer"
-        />
         <TechCard
           img={lael}
           name="Lael"
