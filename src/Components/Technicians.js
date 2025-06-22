@@ -15,7 +15,7 @@ function Technicians() {
     <div className="Technician-section" id="Technicians">
       <div className="dt-title-content">
         <h3 className="dt-title">
-          <span>Meet Our Technicians</span>
+          <span>Meet Our Team</span>
         </h3>
 
         <p className="dt-description">
@@ -59,7 +59,7 @@ function Technicians() {
         />
         <TechCard
           img={lael}
-          name="Lael"
+          name="Lael Barnes"
           title="Marketing / Social Media"
         />
       </div>

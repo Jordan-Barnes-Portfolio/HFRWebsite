@@ -13,8 +13,7 @@ function Footer() {
               Heartland Restoration
             </p>
             <p className="ft-description">
-              Talk to online Technicians and get professional advice. On-demand
-              restoration services at your fingertips.
+              We lead with education, integrity, and a commitment to excellence. Our team of experts is dedicated to providing top-notch restoration services, ensuring your home or business is restored to its former glory. Trust us to handle your restoration needs with care and professionalism.
             </p>
           </div>
 
@@ -71,7 +70,7 @@ function Footer() {
       </div>
 
       <div className="ft-copyright">
-        <p>© 2023-2024 heartlandflood. All rights reserved.</p>
+        <p>© 2024-2025 heartlandflood. All rights reserved.</p>
 
         <ul className="ft-social-links">
           <li>
