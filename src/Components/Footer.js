@@ -46,9 +46,6 @@ function Footer() {
               <Link to={"/legal"}>General Info</Link>
             </li>
             <li>
-              <Link to={"/legal"}>Privacy Policy</Link>
-            </li>
-            <li>
               <Link to={"/legal"}>Terms of Services</Link>
             </li>
             <li>
@@ -61,15 +58,10 @@ function Footer() {
         </div>
 
         <div className="ft-list" id="contact">
-          <p className="ft-list-title">Talk To Us</p>
+          <p className="ft-list-title">Contact Us</p>
           <ul className="ft-list-items">
             <li>
-              <a href="mailto:appointment@heartlandflood.com">joshua@heartlandflood.com</a>
-            </li>
-            <li>
-              <a href="mailto:appointment@heartlandflood.com">
-                jordan@heartlandflood.com
-              </a>
+              <a href="mailto:general@heartlandflood.com">ContactUs@heartlandflood.com</a>
             </li>
             <li>
               <a href="tel:+913 289 3104">Call: 913 289 3104</a>

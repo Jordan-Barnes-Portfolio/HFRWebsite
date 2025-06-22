@@ -21,8 +21,6 @@ function About() {
           is 100% satisfaction. Our family was built on truth & respect. Let us help you in your time of need!
         </p>
 
-        <h4 className="about-text-title">Your Solutions</h4>
-
         <SolutionStep
           title="Emeregency? Call or Book now!"
           description="Book with ease at Heartland Restoration. An expert team of technicians will prioritize you as the customer and arrive promptly."

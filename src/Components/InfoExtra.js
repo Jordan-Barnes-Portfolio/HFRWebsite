@@ -22,43 +22,39 @@ function Info() {
 
     if(!isMobile){
         return (
-            <div className="info-section-extra">
-                <div style={{float: "left", height: "100%", width: "50%", margin: "auto"}}>
-                    <img src={InformationCard} style={{ height:"100%", maxWidth: "100%",  border: "2px", borderRadius: "12px" }}/> 
-                </div>
-                <div style={{float: "right", width: "50%", alignContent: "center"}}>
-                    <div>
-                        <h3 className="ba-title">
-                        <span>Why Choose Heartland Restoration</span>
-                        </h3>
-                        <p className="ba-description">
-                            Heartland is family-owned & locally operated company. We treat your home & business like it is our own. Our technicians
-                            will arrive in a uniform and ready to help. The problems you're experiencing, we're going to solve. Overflows, floods, back-up
-                            broken pipes, leaks, sewage & mold is our specialty. The best part of our service is that you don't pay until you're absolutely
-                            satisfied.
+            <div
+            className="info-section-extra"
+            style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+            >
+            <div style={{ textAlign: "center" }}>
+                <h3 className="ba-title">
+                <span>Why Choose Heartland Restoration</span>
+                </h3>
+                <p className="ba-description">
+                Heartland is family-owned & locally operated company. We treat your home & business like it is our own. Our technicians
+                will arrive in a uniform and ready to help. The problems you're experiencing, we're going to solve. Overflows, floods, back-up
+                broken pipes, leaks, sewage & mold is our specialty. The best part of our service is that you don't pay until you're absolutely
+                satisfied.
+                </p>
 
-                            
-                        </p>
-        
-                        <p className="ba-checks ba-check-first">
-                        <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#2c6598" }} /> Amazing Professional Technicians
-                        </p>
-                        <p className="ba-checks">
-                        <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#2c6598" }} /> Emergency Services Immediately
-                        </p>
-                        <p className="ba-checks ba-check-last">
-                        <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#2c6598" }} /> Appointments only a click away
-                        </p>
-        
-                        <button
-                        className="text-appointment-btn"
-                        type="button"
-                        onClick={handleBookAppointmentClick}
-                        >
-                        <FontAwesomeIcon icon={faCalendarCheck} /> Book Appointment
-                        </button>
-                    </div>
-                </div>
+                <p className="ba-checks ba-check-first">
+                <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#2c6598" }} /> Professional Technicians
+                </p>
+                <p className="ba-checks">
+                <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#2c6598" }} /> 24/7 Emergency Services
+                </p>
+                <p className="ba-checks ba-check-last">
+                <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#2c6598" }} /> Call Or Make An Appointment
+                </p>
+
+                <button
+                className="text-appointment-btn"
+                type="button"
+                onClick={handleBookAppointmentClick}
+                >
+                <FontAwesomeIcon icon={faCalendarCheck} /> Book Appointment
+                </button>
+            </div>
             </div>
           );
     } else {
@@ -75,13 +71,13 @@ function Info() {
                     </p>
 
                     <p className="ba-checks ba-check-first">
-                        <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#2c6598" }} /> Amazing Professional Technicians
+                        <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#2c6598" }} /> Professional Technicians
                     </p>
                     <p className="ba-checks">
-                        <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#2c6598" }} /> Emergency Services Immediately
+                        <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#2c6598" }} /> 24/7 Emergency Services
                     </p>
                     <p className="ba-checks ba-check-last">
-                        <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#2c6598" }} /> Appointments only a click away
+                        <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#2c6598" }} /> Call Or Make An Appointment
                     </p>
 
                     <button
