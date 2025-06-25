@@ -61,15 +61,15 @@ function Hero() {
           />
         </div>
           <div className="text-section" >
-            <p className="text-headline">We're On Standby 24/7 Ready To Take On Your Most Difficult Home Restoration Challenge</p>
+            <p className="text-headline">24/7 Emergency Response Service Available</p>
             
             <h2 className="text-title" style={{width: "100%"}}>
-              Click "Emergency Service" below or call us and we will come right away!
+              If There's Water or Mold Where It Shouldn't Be, Call Me!
             </h2>
             <p className="text-descritpion" style={{width: "100%"}}>
-              Talk to one of our Technicians! You will get expert advice and assistance from
-              one us within minutes. On-demand restoration
-              services at your fingertips.
+              Concerned about a leak, or damage to your home? You will get expert advice and assistance from
+              one us within minutes. Fast acting restoration services
+              with home town values from a Family Owned & Operated Company.
             </p>
             <div style={{
               display: "flex",
