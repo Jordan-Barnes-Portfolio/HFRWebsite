@@ -8,6 +8,8 @@ import sonya from "../Assets/sonya.png";
 import chase from "../Assets/chase.png";
 import allen from "../Assets/allen.png";
 import lael from "../Assets/lael.jpg";
+import philip from "../Assets/philip.png";
+import thomas from "../Assets/thomas.png";
 import { flippedCards } from '../Pages/HeartlandConcierge';
 
 function Technicians() {
@@ -45,6 +47,16 @@ function Technicians() {
           img={billy}
           name="Billy Graham"
           title="Technician"
+          />
+           <TechCard
+          img={philip}
+          name="Philip Barnes"
+          title="Sales Manager"
+          />
+           <TechCard
+          img={thomas}
+          name="Thomas Cromer"
+          title="Sales Associate"
         />
           <TechCard
           img={chase}
@@ -53,7 +65,7 @@ function Technicians() {
         />
         <TechCard
           img={lael}
-          name="Lael"
+          name="Lael Barnes"
           title="Marketing / Social Media"
         />
       </div>

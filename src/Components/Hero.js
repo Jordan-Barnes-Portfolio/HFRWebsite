@@ -4,15 +4,9 @@ import { faCalendarCheck, faAngleUp, faPhone } from "@fortawesome/free-solid-svg
 import { useNavigate  } from "react-router-dom";
 import "../Styles/Hero.css";
 import herobg from "../Assets/hero-bg.jpg";
-import herovid from "../Assets/herobannermedia.mp4";
 import logo from "../Assets/logo.png";
-import { useMediaQuery } from "react-responsive";
-
 
 function Hero() {
-
-  const isMobile = useMediaQuery({ query: '(max-width: 1000px)' });
-  const hero_bg = isMobile ? herobg : herovid;
   
   const navigate = useNavigate();
   const [goUp, setGoUp] = useState(false);
@@ -56,46 +50,30 @@ function Hero() {
           zIndex: -1,
           overflow: "hidden"
         }}>
-          {
-            isMobile ? 
-              <img 
-                src={hero_bg} 
-                alt="hero-bg" 
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover"
-                }}
-              /> 
-              : 
-              <video 
-                autoPlay 
-                muted 
-                loop 
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover"
-                }}
-              >
-                <source src={hero_bg} type="video/mp4"/>
-              </video>
-          }
+          <img 
+            src={herobg} 
+            alt="hero-bg" 
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover"
+            }}
+          />
         </div>
           <div className="text-section" >
-            <p className="text-headline">We're On Standby 24/7 Ready To Take On Your Most Difficult Home Restoration Challenge</p>
+            <p className="text-headline">24/7 Emergency Response Service Available</p>
             
             <h2 className="text-title" style={{width: "100%"}}>
-              Click "Emergency Service" below or call us and we will come right away!
+              If There's Water or Mold Where It Shouldn't Be, Call Me!
             </h2>
             <p className="text-descritpion" style={{width: "100%"}}>
-              Talk to one of our Technicians! You will get expert advice and assistance from
-              one us within minutes. On-demand restoration
-              services at your fingertips.
+              Concerned about a leak, or damage to your home? You will get expert advice and assistance from
+              one us within minutes. Fast acting restoration services
+              with home town values from a Family Owned & Operated Company.
             </p>
             <div style={{
               display: "flex",
-              flexDirection: isMobile ? "column" : "row",
+              flexDirection: "column",
               gap: "10px",
               justifyContent: "center",
               alignItems: "center",
@@ -106,18 +84,18 @@ function Hero() {
                 type="button"
                 onClick={handleBookAppointmentClick}
                 style={{
-                  width: isMobile ? "100%" : "auto",
+                  width: "100%",
                   minWidth: "200px"
                 }}
               >
                 <FontAwesomeIcon icon={faCalendarCheck} /> Schedule emergency service
               </button>
-              <a href="tel:9132133686" onClick={handleCall} style={{width: isMobile ? "100%" : "auto"}}>
+              <a href="tel:9132133686" onClick={handleCall} style={{width: "100%"}}>
                 <button
                   className="text-appointment-btn"
                   type="button"
                   style={{
-                    width: isMobile ? "100%" : "auto",
+                    width: "100%",
                     minWidth: "200px"
                   }}
                 >

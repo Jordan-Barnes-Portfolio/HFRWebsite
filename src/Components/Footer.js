@@ -13,8 +13,7 @@ function Footer() {
               Heartland Restoration
             </p>
             <p className="ft-description">
-              Talk to online Technicians and get professional advice. On-demand
-              restoration services at your fingertips.
+              Heartland Restoration is a family-owned business dedicated to providing top-notch restoration services. Our team of skilled technicians is committed to delivering exceptional results with integrity and care. We understand the importance of trust, especially in times of need, and we strive to exceed your expectations with every project.
             </p>
           </div>
 
@@ -33,9 +32,6 @@ function Footer() {
             <li>
               <a href="#services">Insurance</a>
             </li>
-            <li>
-              <a href="#services">Insights for Technicians</a>
-            </li>
           </ul>
         </div>
 
@@ -47,9 +43,6 @@ function Footer() {
             </li>
             <li>
               <Link to={"/legal"}>Privacy Policy</Link>
-            </li>
-            <li>
-              <Link to={"/legal"}>Terms of Services</Link>
             </li>
             <li>
               <Link to={"/legal"}>Consultations</Link>
@@ -64,12 +57,7 @@ function Footer() {
           <p className="ft-list-title">Talk To Us</p>
           <ul className="ft-list-items">
             <li>
-              <a href="mailto:appointment@heartlandflood.com">joshua@heartlandflood.com</a>
-            </li>
-            <li>
-              <a href="mailto:appointment@heartlandflood.com">
-                jordan@heartlandflood.com
-              </a>
+              <a href="mailto:general@heartlandflood.com">contactus@heartlandflood.com</a>
             </li>
             <li>
               <a href="tel:+913 213 3686">Call: 913 213 3686</a>
@@ -79,7 +67,7 @@ function Footer() {
       </div>
 
       <div className="ft-copyright">
-        <p>© 2023-2024 heartlandflood. All rights reserved.</p>
+        <p>© 2024-2025 heartlandflood. All rights reserved.</p>
 
         <ul className="ft-social-links">
           <li>
