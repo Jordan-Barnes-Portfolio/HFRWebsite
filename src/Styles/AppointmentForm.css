@@ -17,7 +17,7 @@
     position: absolute;
     width: 75%;
     height: 4px;
-    background-color: #9D2553;
+    background-color: #f7941d;
     border-radius: 8px;
     left: 0;
     bottom: -12px;
@@ -32,7 +32,7 @@
 }
 .form-content label::before {
     content: "*";
-    color: red;
+    color: #f7941d;
     padding: 0 4px 0 0;
 }
 .form-content label :is(input, select) {

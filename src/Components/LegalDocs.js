@@ -63,7 +63,7 @@ function LegalDocs() {
       </div>
 
       <div className="legal-footer">
-        <p>© 2023-2024 Heartland Flood and Restoration. All rights reserved.</p>
+        <p>© 2024-2025 Heartland Flood and Restoration. All rights reserved.</p>
       </div>
     </div>
   );
